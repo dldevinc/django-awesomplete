@@ -107,7 +107,12 @@ setup(
     author_email=EMAIL,
     url=URL,
     license='BSD',
-    packages=find_packages(),
+    packages=['awesomplete'],
+    package_data={'awesomplete': [
+        'static/awesomplete/*/*',
+        'static/awesomplete/*/*/*',
+        'templates/awesomplete/*',
+    ]},
     # If your package is a single module, use this instead of 'packages':
     # py_modules=['mypackage'],
 
