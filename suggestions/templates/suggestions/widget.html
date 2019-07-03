@@ -1,0 +1,10 @@
+{% include 'django/forms/widgets/text.html' %}
+{% with suggestions=widget.suggestions %}
+  {% if suggestions %}
+    <datalist id="{{ widget.datalist }}">
+      {% for suggestion in suggestions %}
+        <option>{{ suggestion }}</option>
+      {% endfor %}
+    </datalist>
+  {% endif %}
+{% endwith %}
