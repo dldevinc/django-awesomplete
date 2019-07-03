@@ -1,4 +1,4 @@
-# Django Suggestions
+# Django Awesomplete
 A django app that provides suggestions while you type into the field.
 
 ## Requirements
@@ -24,7 +24,7 @@ To use suggestions we need to override widget in `admin.py`:
 ```python
 from django import forms
 from django.contrib import admin
-from suggestions.widgets import SuggestionsWidget
+from awesomplete.widgets import AwesompleteWidget
 from .models import City
 
 
@@ -42,7 +42,7 @@ class CityAdminForm(forms.ModelForm):
         model = City
         fields = forms.ALL_FIELDS
         widgets = {
-            'country': SuggestionsWidget(
+            'country': AwesompleteWidget(
                 suggestions=get_country_suggestions
             )
         }
@@ -60,14 +60,14 @@ Result:
 ## Installation
 Install the desired version with pip:
 
-```pip install django-suggestions```
+```pip install django-awesomplete```
 
-Then add suggestions to INSTALLED_APPS in your settings file:
+Then add awesomplete to INSTALLED_APPS in your settings file:
 
 ```python
 INSTALLED_APPS = (
     # ...
-    'suggestions',
+    'awesomplete',
     # ...
 )
 ```

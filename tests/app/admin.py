@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib import admin
-from suggestions.widgets import SuggestionsWidget
+from awesomplete.widgets import AwesompleteWidget
 from .models import City
 
 
@@ -15,7 +15,7 @@ class CityAdminForm(forms.ModelForm):
         model = City
         fields = forms.ALL_FIELDS
         widgets = {
-            'country': SuggestionsWidget(
+            'country': AwesompleteWidget(
                 suggestions=get_country_suggestions
             )
         }

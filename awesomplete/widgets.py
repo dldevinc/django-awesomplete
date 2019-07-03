@@ -5,8 +5,8 @@ from django.forms import widgets
 from django.forms.fields import CallableChoiceIterator
 
 
-class SuggestionsWidget(widgets.TextInput):
-    template_name = 'suggestions/widget.html'
+class AwesompleteWidget(widgets.TextInput):
+    template_name = 'awesomplete/widget.html'
 
     def __init__(self, attrs=None, suggestions=(), minchars=1, maxitems=10, autofirst=True):
         super().__init__(attrs)
@@ -69,12 +69,12 @@ class SuggestionsWidget(widgets.TextInput):
         extra = '' if settings.DEBUG else '.min'
         return forms.Media(
             js=(
-                'suggestions/js/vendor/awesomplete%s.js' % extra,
-                'suggestions/js/widget.js',
+                'awesomplete/js/vendor/awesomplete%s.js' % extra,
+                'awesomplete/js/widget.js',
             ),
             css={
                 'screen': (
-                    'suggestions/css/awesomplete.css',
+                    'awesomplete/css/awesomplete.css',
                 ),
             },
         )

@@ -12,9 +12,9 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'django-suggesions'
+NAME = 'django-awesomplete'
 DESCRIPTION = 'A django app that provides suggestions while you type into the field.'
-URL = 'https://github.com/dldevinc/django-suggestions'
+URL = 'https://github.com/dldevinc/django-awesomplete'
 EMAIL = 'x896321475@gmail.com'
 AUTHOR = 'Mihail Mishakin'
 VERSION = '0.1.0'
