@@ -54,6 +54,7 @@ class CityAdmin(admin.ModelAdmin):
 ```
 
 Result:
+
 ![](http://i.imgur.com/NRCdgNu.png)
 
 ## Installation
