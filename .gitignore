@@ -12,4 +12,3 @@ eggs/
 .env/
 env/
 venv/
-testing/output
