@@ -26,7 +26,9 @@ class AwesompleteWidget(widgets.TextInput):
         return self._suggestions
 
     def _set_suggestions(self, value):
-        if callable(value):
+        if isinstance(value, CallableChoiceIterator):
+            self._suggestions = value
+        elif callable(value):
             self._suggestions = CallableChoiceIterator(value)
         else:
             self._suggestions = list(value)
