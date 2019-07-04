@@ -33,6 +33,12 @@ class CityLanguageInline(admin.TabularInline):
     extra = 0
 
 
+class CityLanguageStackedInline(admin.StackedInline):
+    model = CityLanguage
+    form = CityLanguageInlineForm
+    extra = 0
+
+
 class CityAdminForm(forms.ModelForm):
     class Meta:
         model = City
@@ -47,5 +53,5 @@ class CityAdminForm(forms.ModelForm):
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
     form = CityAdminForm
-    inlines = (CityLanguageInline, )
+    inlines = (CityLanguageInline, CityLanguageStackedInline)
     list_display = ('name', 'country')

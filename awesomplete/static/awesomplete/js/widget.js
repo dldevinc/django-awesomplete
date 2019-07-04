@@ -5,7 +5,7 @@
             var $input = $(this);
             var $formRow = $input.closest('.form-row');
 
-            if ($formRow.hasClass('empty-form')) {
+            if ($input.closest('.empty-form').length) {
                 return
             }
 
