@@ -17,7 +17,7 @@ DESCRIPTION = 'A django app that provides suggestions while you type into the fi
 URL = 'https://github.com/dldevinc/django-awesomplete'
 EMAIL = 'x896321475@gmail.com'
 AUTHOR = 'Mihail Mishakin'
-VERSION = '0.1.5'
+VERSION = '0.1.6'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
