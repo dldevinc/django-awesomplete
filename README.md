@@ -72,6 +72,38 @@ INSTALLED_APPS = (
 )
 ```
 
+## Suggestions
+You can pass either an iterable of strings, 2-tuples, dicts or a callable that returns such an iterable.
+
+```python
+# iterable of strings
+AwesompleteWidget(
+    suggestions=['one', 'two', 'three']
+)
+
+# iterable of 2-tuples (label, value)
+AwesompleteWidget(
+    suggestions=(
+        ('English', 'en'),
+        ('Spanish', 'es')
+    )
+)
+
+# iterable of dicts
+AwesompleteWidget(
+    suggestions=(
+        {
+            'label': 'English',
+            'value': 'en'        
+        },
+        {
+            'label': 'Spanish',
+            'value': 'es'        
+        }
+    )
+)
+```
+
 ## Links
 + [awesomplete](http://leaverou.github.io/awesomplete/) created by Lea Verou.
 
