@@ -35,6 +35,19 @@ class AwesompleteWidget(widgets.TextInput):
 
     suggestions = property(_get_suggestions, _set_suggestions)
 
+    def build_suggestions(self, base_suggestions):
+        suggestions = []
+        for suggestion in base_suggestions:
+            if isinstance(suggestion, (list, tuple)):
+                suggestions.append(suggestion)
+            elif isinstance(suggestion, str):
+                suggestions.append((suggestion, suggestion))
+            elif isinstance(suggestion, dict):
+                suggestions.append((suggestion.get('label', ''), suggestion.get('value', '')))
+            else:
+                raise ValueError(suggestion)
+        return suggestions
+
     def get_datalist_id(self, name):
         id_ = self.attrs.get('datalist')
         if id_ is None:
@@ -61,8 +74,8 @@ class AwesompleteWidget(widgets.TextInput):
         final_attrs['list'] = datalist_id
 
         context['widget'].update({
-            'datalist': datalist_id,
-            'suggestions': list(self.suggestions)
+            'datalist_id': datalist_id,
+            'suggestions': self.build_suggestions(self.suggestions)
         })
         return context
 
