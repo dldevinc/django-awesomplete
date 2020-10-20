@@ -6,7 +6,9 @@ python:
   - 3.5
   - 3.4
 before_install:
-  - pip install twine
+  - if [ "$TRAVIS_PYTHON_VERSION" != "3.4" ]; then
+      pip install twine;
+    fi
   - pip install -U pip setuptools wheel tox-travis
 branches:
   only:
@@ -15,7 +17,9 @@ branches:
 script:
   - python setup.py sdist
   - python setup.py bdist_wheel
-  - twine check dist/*
+  - if [ "$TRAVIS_PYTHON_VERSION" != "3.4" ]; then
+      twine check dist/*;
+    fi
   - tox
 deploy:
   provider: pypi
