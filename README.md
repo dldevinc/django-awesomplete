@@ -1,6 +1,9 @@
 # Django Awesomplete
 A django app that provides suggestions while you type into the field.
 
+[![PyPI](https://img.shields.io/pypi/v/django-awesomplete.svg)](https://pypi.org/project/django-awesomplete/)
+[![Build Status](https://travis-ci.org/dldevinc/django-awesomplete.svg?branch=master)](https://travis-ci.org/dldevinc/django-awesomplete)
+
 ## Requirements
 + Python 3.4+
 + Django 1.11+

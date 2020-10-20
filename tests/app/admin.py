@@ -1,5 +1,4 @@
 from django import forms
-from django.db import models
 from django.contrib import admin
 from django.utils.timezone import now, timedelta
 from awesomplete.widgets import AwesompleteWidget
@@ -24,11 +23,27 @@ def date_generator():
     yield 'Tomorrow', now() + timedelta(days=1)
 
 
+def date_formatter(dates):
+    for name, datetime in dates:
+        yield (
+            name,
+            datetime.replace(
+                hour=0,
+                minute=0,
+                second=0,
+                microsecond=0
+            ).strftime('%m/%d/%Y %H:%M:%S')
+        )
+
+
 def get_date_suggestions():
-    for label, date in date_generator():
+    """
+    Example with chained generators
+    """
+    for label, date in date_formatter(date_generator()):
         yield {
             'label': label,
-            'value': date.strftime('%m/%d/%Y %H:%M:%S')
+            'value': date
         }
 
 
@@ -57,10 +72,11 @@ class CityLanguageStackedInline(admin.StackedInline):
 
 class CityAdminForm(forms.ModelForm):
     date = forms.DateTimeField(
+        required=False,
         label=City._meta.get_field('date').verbose_name.capitalize(),
         help_text=City._meta.get_field('date').help_text,
         widget=AwesompleteWidget(
-            suggestions=get_date_suggestions
+            suggestions=get_date_suggestions,
         )
     )
 

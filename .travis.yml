@@ -1,0 +1,31 @@
+language: python
+python:
+  - 3.8
+  - 3.7
+  - 3.6
+  - 3.5
+  - 3.4
+before_install:
+  - pip install twine
+  - pip install -U pip setuptools wheel tox-travis
+branches:
+  only:
+    - master
+    - "/^v?\\d(\\.\\d+)+$/"
+script:
+  - python setup.py sdist
+  - python setup.py bdist_wheel
+  - twine check dist/*
+  - tox
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  skip_existing: true
+  skip_cleanup: true
+  user: __token__
+  password:
+    secure: AhMN44LTK+9EixHQttiPogaBj6skM1IrmgnOfKa4ubwp780AmJ37ihxPfZfiawLPmnITzbH6DYZjOEjN1wgFIRrRSNVqShHKPl8nMP9d9O0COdvQVs6h9600yf1yyciap93fQ9LWqAAYj3lMo1WkxGIbl6vDhdIKxxrw8rWhUm+peXaeQQIg0sQuetqm0FmLLnPa9r0r3oXwYCVe+kyOiMkNbFOupHWRQ58IyOYXKLDXkbNAjZcLLZsjGRb6nVMXS4Mt30X1oMRi3aSjre6f+kdJm0z9Vl+WzkUKiPRu4M/liblAbhM6WfLj6jguICRZk7SQWnye0mu7KkzKPhLi5xXpPiQ12LDFa6TwNbYBXfxy0S0cMO6ufxYKke25Ws8OfyFD9p1XhUw+qadJjGBGOCxnfVgH7CszXkIJy73laL57paJyRKYEG0SgW4nVJWIsskKSn6ebzGvyYI4XwqWr2GMOT/6PcVCQU/qE796rtyLFLy3xZtg4bXPdPg728ZLPXVgcBs8bVt2j+ejmoR5RyNFV6wzPjqyxp3wxWxm0u7ptsnpBWGUw3IfumbAoxMgNe7rHpGBanky6jyuJaAGzjrA+EbVIrQMQDjnzSrALa6udoRMML9PVdjAxAC+4h6cdip+icXzYBjlq6MLsBrfku4AL3bCGV6AUKMNoXdr/a6k=
+  on:
+    repo: dldevinc/django-awesomplete
+    condition: "$TRAVIS_PYTHON_VERSION = 3.8"
+    tags: true
