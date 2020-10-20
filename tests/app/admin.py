@@ -77,6 +77,7 @@ class CityAdminForm(forms.ModelForm):
         help_text=City._meta.get_field('date').help_text,
         widget=AwesompleteWidget(
             suggestions=get_date_suggestions,
+            min_chars=0
         )
     )
 

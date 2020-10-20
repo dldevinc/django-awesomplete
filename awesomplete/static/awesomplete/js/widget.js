@@ -18,6 +18,16 @@
                 sort: function() {}
             });
 
+            // when minChars is set to zero, show popup on focus.
+            if (object.minChars === 0) {
+                object.input.addEventListener('focus', function() {
+                    var input = this;
+                    if (input.value.length === 0) {
+                        object.evaluate()
+                    }
+                });
+            }
+
             // fix horizontal position (because of "float:left" on label)
             object.ul.style.marginLeft = object.input.offsetLeft + 'px';
         });

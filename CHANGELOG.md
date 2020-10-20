@@ -4,4 +4,5 @@
 - The *minchars* and *maxitems* arguments of AwesompleteWidget 
 are marked as obsolete and will be renamed to *min_chars* and *max_items*
 respectively.
+- Show suggestions on focus when *min_chars* is set to zero
 - Update dev environment
