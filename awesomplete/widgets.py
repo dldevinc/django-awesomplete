@@ -1,4 +1,5 @@
 import copy
+import warnings
 from django import forms
 from django.conf import settings
 from django.forms import widgets
@@ -8,10 +9,16 @@ from django.forms.fields import CallableChoiceIterator
 class AwesompleteWidget(widgets.TextInput):
     template_name = 'awesomplete/widget.html'
 
-    def __init__(self, attrs=None, suggestions=(), minchars=1, maxitems=10, autofirst=True):
+    def __init__(self, attrs=None, suggestions=(), minchars=None, maxitems=None, autofirst=True,
+                 min_chars=1, max_items=10):
+        if minchars is not None:
+            warnings.warn('"minchars" is deprecated in favor of "min_chars"', stacklevel=2)
+        if maxitems is not None:
+            warnings.warn('"maxitems" is deprecated in favor of "max_items"', stacklevel=2)
+
         super().__init__(attrs)
-        self.minchars = minchars
-        self.maxitems = maxitems
+        self.min_chars = minchars if minchars is not None else min_chars
+        self.max_items = maxitems if maxitems is not None else max_items
         self.autofirst = autofirst
         self.suggestions = suggestions
 
@@ -59,8 +66,8 @@ class AwesompleteWidget(widgets.TextInput):
         attrs.setdefault('class', '')
         attrs.update({
             'data-sort': 'false',
-            'data-minchars': self.minchars,
-            'data-maxitems': self.maxitems,
+            'data-minchars': self.min_chars,
+            'data-maxitems': self.max_items,
             'data-autofirst': self.autofirst,
             'class': attrs['class'] + (' ' if attrs['class'] else '') + 'admin-awesomplete',
         })
