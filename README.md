@@ -140,6 +140,28 @@ class CityAdminForm(forms.ModelForm):
         }
 ```
 
+You can also pass additional parameters to `AwesompleteWidgetWrapper`:
+
++ **`min_chars`**
+  <br>
+  Minimum characters the user has to type before the autocomplete 
+  popup shows up.
+  <br>
+  *Default*: `1`
+
++ **`max_items`**
+    <br>
+    Maximum number of suggestions to display.
+    <br>
+    *Default*: `10`
+
++ **`autofirst`**
+    <br>
+    Should the first element be automatically selected?
+    <br>
+    *Default*: `True`
+
+
 ## Links
 + [awesomplete](http://leaverou.github.io/awesomplete/) created by Lea Verou.
 
