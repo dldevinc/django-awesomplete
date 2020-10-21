@@ -8,6 +8,23 @@ A django app that provides suggestions while you type into the field.
 + Python 3.4+
 + Django 1.11+
 
+## Installation
+Install the desired version with pip:
+
+```
+pip install django-awesomplete
+```
+
+Then add awesomplete to INSTALLED_APPS in your settings file:
+
+```python
+INSTALLED_APPS = (
+    # ...
+    'awesomplete',
+    # ...
+)
+```
+
 ## Quickstart
 
 Lets assume we are making a cities app in django and our `models.py` is:
@@ -59,23 +76,6 @@ class CityAdmin(admin.ModelAdmin):
 Result:
 
 ![](http://i.imgur.com/NRCdgNu.png)
-
-## Installation
-Install the desired version with pip:
-
-```
-pip install django-awesomplete
-```
-
-Then add awesomplete to INSTALLED_APPS in your settings file:
-
-```python
-INSTALLED_APPS = (
-    # ...
-    'awesomplete',
-    # ...
-)
-```
 
 ## Suggestions
 You can pass either an iterable of strings, 2-tuples, dicts 
