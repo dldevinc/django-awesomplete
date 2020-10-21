@@ -1,4 +1,5 @@
 from django import forms
+from django.conf import settings
 from django.contrib import admin
 from django.utils.timezone import now, timedelta
 from awesomplete.widgets import AwesompleteWidgetWrapper
@@ -47,16 +48,6 @@ class CityAdminForm(forms.ModelForm):
         widgets = {
             'country': AwesompleteWidgetWrapper(
                 suggestions=get_country_suggestions
-            ),
-            'mayor_email': AwesompleteWidgetWrapper(
-                widget=forms.EmailInput,
-                suggestions=(
-                    'noreply@mail.com',
-                    'dont_disturb@mail.com',
-                    'mayor@mail.com',
-                    'support@mail.com',
-                ),
-                min_chars=0
             )
         }
 
@@ -69,21 +60,21 @@ class CityAdmin(admin.ModelAdmin):
 
 
 def date_generator():
-    yield 'Yesterday', now() - timedelta(days=1)
-    yield 'Today', now()
-    yield 'Tomorrow', now() + timedelta(days=1)
+    yield now() - timedelta(days=1), 'Yesterday'
+    yield now(), 'Today'
+    yield now() + timedelta(days=1), 'Tomorrow'
 
 
 def date_formatter(dates):
-    for name, datetime in dates:
+    for datetime, label in dates:
         yield (
-            name,
             datetime.replace(
                 hour=0,
                 minute=0,
                 second=0,
                 microsecond=0
-            ).strftime('%m/%d/%Y %H:%M:%S')
+            ).strftime('%m/%d/%Y %H:%M:%S'),
+            label
         )
 
 
@@ -91,7 +82,7 @@ def get_date_suggestions():
     """
     Example with chained generators
     """
-    for label, date in date_formatter(date_generator()):
+    for date, label in date_formatter(date_generator()):
         yield {
             'label': label,
             'value': date
@@ -129,6 +120,9 @@ class PersonForm(forms.ModelForm):
                     'user@hotmail.com',
                 ),
             ),
+            'language': AwesompleteWidgetWrapper(
+                suggestions=settings.LANGUAGES
+            )
         }
 
 

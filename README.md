@@ -85,11 +85,11 @@ AwesompleteWidgetWrapper(
     suggestions=['one', 'two', 'three']
 )
 
-# iterable of 2-tuples (label, value)
+# iterable of 2-tuples (value, label)
 AwesompleteWidgetWrapper(
     suggestions=(
-        ('English', 'en'),
-        ('Spanish', 'es')
+        ('en', 'English'),
+        ('es', 'Spanish')
     )
 )
 

@@ -6,34 +6,49 @@ from django.forms import widgets
 from django.forms.fields import CallableChoiceIterator
 
 
-def build_suggestions(base_suggestions):
-    suggestions = []
-    for suggestion in base_suggestions:
+def build_suggestions(suggestions):
+    choices = []
+    for suggestion in suggestions:
         if isinstance(suggestion, (list, tuple)):
-            suggestions.append(suggestion)
+            value, label = suggestion[:2]
+            choices.append((label, value))
         elif isinstance(suggestion, str):
-            suggestions.append((suggestion, suggestion))
+            choices.append((suggestion, suggestion))
         elif isinstance(suggestion, dict):
-            suggestions.append((suggestion.get('label', ''), suggestion.get('value', '')))
+            choices.append((suggestion.get('label', ''), suggestion.get('value', '')))
         else:
             raise TypeError(suggestion)
-    return suggestions
+    return choices
+
+
+def build_compat_suggestions(suggestions):
+    """
+    Obsolete version of "build_suggestions" method.
+    Since v0.2.0 the order of the arguments in lists
+    and tuples has been reversed.
+    """
+    choices = []
+    for suggestion in suggestions:
+        if isinstance(suggestion, (list, tuple)):
+            choices.append(suggestion)
+        elif isinstance(suggestion, str):
+            choices.append((suggestion, suggestion))
+        elif isinstance(suggestion, dict):
+            choices.append((suggestion.get('label', ''), suggestion.get('value', '')))
+        else:
+            raise TypeError(suggestion)
+    return choices
 
 
 class AwesompleteWidget(widgets.TextInput):
     template_name = 'awesomplete/widget.html'
 
-    def __init__(self, attrs=None, suggestions=(), minchars=None, maxitems=None, autofirst=True,
-                 min_chars=1, max_items=10):
+    def __init__(self, attrs=None, suggestions=(), minchars=1, maxitems=10, autofirst=True):
         warnings.warn('"AwesompleteWidget" is deprecated in favor of "AwesompleteWidgetWrapper"', stacklevel=2)
-        if minchars is not None:
-            warnings.warn('"minchars" is deprecated in favor of "min_chars"', stacklevel=2)
-        if maxitems is not None:
-            warnings.warn('"maxitems" is deprecated in favor of "max_items"', stacklevel=2)
 
         super().__init__(attrs)
-        self.min_chars = minchars if minchars is not None else min_chars
-        self.max_items = maxitems if maxitems is not None else max_items
+        self.min_chars = minchars
+        self.max_items = maxitems
         self.autofirst = autofirst
         self.suggestions = suggestions
 
@@ -84,7 +99,7 @@ class AwesompleteWidget(widgets.TextInput):
 
         context['widget'].update({
             'datalist_id': datalist_id,
-            'suggestions': build_suggestions(self.suggestions)
+            'suggestions': build_compat_suggestions(self.suggestions)
         })
         return context
 
