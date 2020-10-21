@@ -1,8 +1,8 @@
 from django import forms
 from django.contrib import admin
 from django.utils.timezone import now, timedelta
-from awesomplete.widgets import AwesompleteWidget, AwesompleteWidgetWrapper
-from .models import City, CityLanguage
+from awesomplete.widgets import AwesompleteWidgetWrapper
+from .models import City, CityLanguage, Person
 
 
 def get_country_suggestions():
@@ -15,6 +15,57 @@ def get_language_suggestions():
     return CityLanguage.objects.values_list(
         'language', flat=True
     ).order_by('language').distinct()
+
+
+class CityLanguageInlineForm(forms.ModelForm):
+    class Meta:
+        model = CityLanguage
+        fields = forms.ALL_FIELDS
+        widgets = {
+            'language': AwesompleteWidgetWrapper(
+                suggestions=get_language_suggestions
+            )
+        }
+
+
+class CityLanguageInline(admin.TabularInline):
+    model = CityLanguage
+    form = CityLanguageInlineForm
+    extra = 0
+
+
+class CityLanguageStackedInline(admin.StackedInline):
+    model = CityLanguage
+    form = CityLanguageInlineForm
+    extra = 0
+
+
+class CityAdminForm(forms.ModelForm):
+    class Meta:
+        model = City
+        fields = forms.ALL_FIELDS
+        widgets = {
+            'country': AwesompleteWidgetWrapper(
+                suggestions=get_country_suggestions
+            ),
+            'mayor_email': AwesompleteWidgetWrapper(
+                widget=forms.EmailInput,
+                suggestions=(
+                    'noreply@mail.com',
+                    'dont_disturb@mail.com',
+                    'mayor@mail.com',
+                    'support@mail.com',
+                ),
+                min_chars=0
+            )
+        }
+
+
+@admin.register(City)
+class CityAdmin(admin.ModelAdmin):
+    form = CityAdminForm
+    inlines = (CityLanguageInline, CityLanguageStackedInline)
+    list_display = ('name', 'country')
 
 
 def date_generator():
@@ -47,62 +98,41 @@ def get_date_suggestions():
         }
 
 
-class CityLanguageInlineForm(forms.ModelForm):
-    class Meta:
-        model = CityLanguage
-        fields = forms.ALL_FIELDS
-        widgets = {
-            'language': AwesompleteWidget(  # TODO: use AwesompleteWidgetWrapper
-                suggestions=get_language_suggestions
-            )
-        }
-
-
-class CityLanguageInline(admin.TabularInline):
-    model = CityLanguage
-    form = CityLanguageInlineForm
-    extra = 0
-
-
-class CityLanguageStackedInline(admin.StackedInline):
-    model = CityLanguage
-    form = CityLanguageInlineForm
-    extra = 0
-
-
-class CityAdminForm(forms.ModelForm):
+class PersonForm(forms.ModelForm):
     date = forms.DateTimeField(
         required=False,
-        label=City._meta.get_field('date').verbose_name.capitalize(),
-        help_text=City._meta.get_field('date').help_text,
+        label=Person._meta.get_field('date').verbose_name.capitalize(),
+        help_text=Person._meta.get_field('date').help_text,
         widget=AwesompleteWidgetWrapper(
+            widget=forms.DateTimeInput(attrs={
+                'class': 'some-datetime-class'
+            }),
             suggestions=get_date_suggestions,
             min_chars=0
         )
     )
 
     class Meta:
-        model = City
+        model = Person
         fields = forms.ALL_FIELDS
         widgets = {
-            'country': AwesompleteWidget(  # TODO: use AwesompleteWidgetWrapper
-                suggestions=get_country_suggestions
-            ),
-            'mayor_email': AwesompleteWidgetWrapper(
-                widget=forms.EmailInput,
+            'email': AwesompleteWidgetWrapper(
+                widget=forms.EmailInput(attrs={
+                    'class': 'some-email-class'
+                }),
+                min_chars=0,
                 suggestions=(
-                    'noreply@mail.com',
-                    'dont_disturb@mail.com',
-                    'mayor@mail.com',
-                    'support@mail.com',
+                    'user@aol.com',
+                    'user@mail.com',
+                    'user@gmail.com',
+                    'user@yahoo.com',
+                    'user@hotmail.com',
                 ),
-                min_chars=0
-            )
+            ),
         }
 
 
-@admin.register(City)
-class CityAdmin(admin.ModelAdmin):
-    form = CityAdminForm
-    inlines = (CityLanguageInline, CityLanguageStackedInline)
-    list_display = ('name', 'country', 'mayor_email')
+@admin.register(Person)
+class PersonAdmin(admin.ModelAdmin):
+    form = PersonForm
+    list_display = ('name', 'email')
