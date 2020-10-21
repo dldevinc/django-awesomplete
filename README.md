@@ -114,7 +114,7 @@ AwesompleteWidgetWrapper(
 Actually, `AwesompleteWidgetWrapper` is a wrapper for a widget. 
 When the `widget` is not defined, it defaults to `TextInput`.
 
-You can set `widget` explicitly:
+You can specify another widget explicitly, e.g. `EmailInput`:
 
 ```python
 from django import forms
