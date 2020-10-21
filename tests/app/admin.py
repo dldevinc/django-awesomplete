@@ -52,7 +52,7 @@ class CityLanguageInlineForm(forms.ModelForm):
         model = CityLanguage
         fields = forms.ALL_FIELDS
         widgets = {
-            'language': AwesompleteWidget(
+            'language': AwesompleteWidget(  # TODO: use AwesompleteWidgetWrapper
                 suggestions=get_language_suggestions
             )
         }
@@ -85,7 +85,7 @@ class CityAdminForm(forms.ModelForm):
         model = City
         fields = forms.ALL_FIELDS
         widgets = {
-            'country': AwesompleteWidget(
+            'country': AwesompleteWidget(  # TODO: use AwesompleteWidgetWrapper
                 suggestions=get_country_suggestions
             ),
             'mayor_email': AwesompleteWidgetWrapper(

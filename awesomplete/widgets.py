@@ -25,6 +25,7 @@ class AwesompleteWidget(widgets.TextInput):
 
     def __init__(self, attrs=None, suggestions=(), minchars=None, maxitems=None, autofirst=True,
                  min_chars=1, max_items=10):
+        warnings.warn('"AwesompleteWidget" is deprecated in favor of "AwesompleteWidgetWrapper"', stacklevel=2)
         if minchars is not None:
             warnings.warn('"minchars" is deprecated in favor of "min_chars"', stacklevel=2)
         if maxitems is not None:
