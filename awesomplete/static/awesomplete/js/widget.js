@@ -1,10 +1,25 @@
 (function($) {
 
-    function initWidgets($root) {
+    function initWidgets($root, formsetName) {
         $root.find('.admin-awesomplete').each(function() {
             var $input = $(this);
             if ($input.closest('.empty-form').length) {
                 return
+            }
+
+            // Replace "__prefix__"
+            if (formsetName) {
+                var id_regex = new RegExp("(" + formsetName + "-(\\d+|__prefix__))");
+                var name_match = id_regex.exec($input.prop('name'));
+                var formsetIndex = name_match && name_match[2];
+                if (formsetIndex) {
+                    var replacement = formsetName + "-" + formsetIndex;
+                    if ($input.get(0).hasAttribute("list")) {
+                        $input.attr("list", $input.attr("list").replace(id_regex, replacement));
+                    } else if ($input.get(0).hasAttribute("data-list")) {
+                        $input.attr("data-list", $input.attr("data-list").replace(id_regex, replacement));
+                    }
+                }
             }
 
             // Django's "overflow:hidden" fix
@@ -35,7 +50,7 @@
     $(document).ready(function() {
         initWidgets($(document.body));
     }).on('formset:added', function(event, $row, formsetName) {
-        initWidgets($row);
+        initWidgets($row, formsetName);
     });
 
 })(django.jQuery);
