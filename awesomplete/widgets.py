@@ -173,13 +173,14 @@ class AwesompleteWidgetWrapper(widgets.Widget):
             id_ = attrs.get('id', name) + '_list'
         return id_
 
-    def get_context(self, name, value, attrs):
+    def get_context(self, name, value, attrs, renderer=None):
         extra_attrs = {
             'data-minchars': self.min_chars,
             'data-maxitems': self.max_items,
             'data-autofirst': self.autofirst,
         }
-        attrs = self.build_attrs(attrs, extra_attrs)
+        attrs = self.build_attrs(extra_attrs, attrs)
+        attrs = self.build_attrs(self.attrs, attrs)
 
         # add CSS-class
         attrs['class'] = attrs.get('class', '') + ' admin-awesomplete'
@@ -189,13 +190,17 @@ class AwesompleteWidgetWrapper(widgets.Widget):
         attrs['data-list'] = '#%s' % list_id
 
         context = {
-            'rendered_widget': self.widget.render(name, value, attrs),
+            'rendered_widget': self.widget.render(name, value, attrs, renderer),
             'is_hidden': self.is_hidden,
             'name': name,
             'list_id': list_id,
             'suggestions': build_suggestions(self.suggestions)
         }
         return context
+
+    def render(self, name, value, attrs=None, renderer=None):
+        context = self.get_context(name, value, attrs, renderer)
+        return self._render(self.template_name, context, renderer)
 
     def value_from_datadict(self, data, files, name):
         return self.widget.value_from_datadict(data, files, name)
