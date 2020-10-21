@@ -63,7 +63,9 @@ Result:
 ## Installation
 Install the desired version with pip:
 
-```pip install django-awesomplete```
+```
+pip install django-awesomplete
+```
 
 Then add awesomplete to INSTALLED_APPS in your settings file:
 
