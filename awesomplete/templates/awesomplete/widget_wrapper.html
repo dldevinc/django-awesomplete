@@ -1,10 +1,6 @@
 {{ rendered_widget }}
 {% if not is_hidden %}
   {% if suggestions %}
-    <datalist id="{{ list_id }}">
-      {% for label, value  in suggestions %}
-        <option value="{{ value }}">{{ label }}</option>
-      {% endfor %}
-    </datalist>
+    {{ suggestions|json_script:list_id }}
   {% endif %}
 {% endif %}

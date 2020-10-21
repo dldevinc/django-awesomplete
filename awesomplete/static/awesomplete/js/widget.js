@@ -23,6 +23,13 @@
                 sort: function() {}
             });
 
+            // Load list from JSON
+            var listId = getListId(input);
+            var $list = listId && $(listId);
+            if ($list && $list.length && ($list.prop('tagName') === 'SCRIPT')) {
+                instance.list = JSON.parse($list.text());
+            }
+
             // when minChars is set to zero, show popup on focus.
             if (instance.minChars === 0) {
                 instance.input.addEventListener('focus', function() {
@@ -36,6 +43,14 @@
             // fix horizontal position (because of "float:left" on label)
             instance.ul.style.marginLeft = instance.input.offsetLeft + 'px';
         });
+    }
+
+    function getListId(input) {
+        if (input.hasAttribute("list")) {
+            return input.getAttribute("list");
+        } else {
+            return input.getAttribute("data-list");
+        }
     }
 
     function replaceFormsetPrefix(input, formsetName) {
