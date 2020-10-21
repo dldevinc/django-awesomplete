@@ -3,13 +3,12 @@
     function initWidgets($root) {
         $root.find('.admin-awesomplete').each(function() {
             var $input = $(this);
-            var $formRow = $input.closest('.form-row');
-
             if ($input.closest('.empty-form').length) {
                 return
             }
 
             // Django's "overflow:hidden" fix
+            var $formRow = $input.closest('.form-row');
             if ($formRow.length) {
                 $formRow.css('overflow', 'visible');
             }

@@ -1,8 +1,9 @@
 # Change Log
 
 ## [0.2.0](https://github.com/dldevinc/django-awesomplete/tree/v0.2.0) - 2020-10-20
-- The *minchars* and *maxitems* arguments of AwesompleteWidget 
+- The *minchars* and *maxitems* arguments of `AwesompleteWidget`
 are marked as obsolete and will be renamed to *min_chars* and *max_items*
 respectively.
+- Added `AwesompleteWidgetWrapper` that can turn any widget to Awesomplete.
 - Show suggestions on focus when *min_chars* is set to zero
 - Update dev environment

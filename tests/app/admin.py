@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib import admin
 from django.utils.timezone import now, timedelta
-from awesomplete.widgets import AwesompleteWidget
+from awesomplete.widgets import AwesompleteWidget, AwesompleteWidgetWrapper
 from .models import City, CityLanguage
 
 
@@ -75,7 +75,7 @@ class CityAdminForm(forms.ModelForm):
         required=False,
         label=City._meta.get_field('date').verbose_name.capitalize(),
         help_text=City._meta.get_field('date').help_text,
-        widget=AwesompleteWidget(
+        widget=AwesompleteWidgetWrapper(
             suggestions=get_date_suggestions,
             min_chars=0
         )
@@ -88,6 +88,16 @@ class CityAdminForm(forms.ModelForm):
             'country': AwesompleteWidget(
                 suggestions=get_country_suggestions
             ),
+            'mayor_email': AwesompleteWidgetWrapper(
+                widget=forms.EmailInput,
+                suggestions=(
+                    'noreply@mail.com',
+                    'dont_disturb@mail.com',
+                    'mayor@mail.com',
+                    'support@mail.com',
+                ),
+                min_chars=0
+            )
         }
 
 
@@ -95,4 +105,4 @@ class CityAdminForm(forms.ModelForm):
 class CityAdmin(admin.ModelAdmin):
     form = CityAdminForm
     inlines = (CityLanguageInline, CityLanguageStackedInline)
-    list_display = ('name', 'country')
+    list_display = ('name', 'country', 'mayor_email')

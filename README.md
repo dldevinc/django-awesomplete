@@ -27,7 +27,7 @@ To use suggestions we need to override widget in `admin.py`:
 ```python
 from django import forms
 from django.contrib import admin
-from awesomplete.widgets import AwesompleteWidget
+from awesomplete.widgets import AwesompleteWidgetWrapper
 from .models import City
 
 
@@ -45,7 +45,7 @@ class CityAdminForm(forms.ModelForm):
         model = City
         fields = forms.ALL_FIELDS
         widgets = {
-            'country': AwesompleteWidget(
+            'country': AwesompleteWidgetWrapper(
                 suggestions=get_country_suggestions
             )
         }
@@ -76,16 +76,17 @@ INSTALLED_APPS = (
 ```
 
 ## Suggestions
-You can pass either an iterable of strings, 2-tuples, dicts or a callable that returns such an iterable.
+You can pass either an iterable of strings, 2-tuples, dicts 
+or a callable that returns such an iterable.
 
 ```python
 # iterable of strings
-AwesompleteWidget(
+AwesompleteWidgetWrapper(
     suggestions=['one', 'two', 'three']
 )
 
 # iterable of 2-tuples (label, value)
-AwesompleteWidget(
+AwesompleteWidgetWrapper(
     suggestions=(
         ('English', 'en'),
         ('Spanish', 'es')
@@ -93,7 +94,7 @@ AwesompleteWidget(
 )
 
 # iterable of dicts
-AwesompleteWidget(
+AwesompleteWidgetWrapper(
     suggestions=(
         {
             'label': 'English',
@@ -105,6 +106,36 @@ AwesompleteWidget(
         }
     )
 )
+```
+
+## AwesompleteWidgetWrapper
+Actually, `AwesompleteWidgetWrapper` is a wrapper for a widget. 
+When the `widget` is not defined, it defaults to `TextInput`.
+
+You can set `widget` explicitly:
+
+```python
+from django import forms
+from awesomplete.widgets import AwesompleteWidgetWrapper
+from .models import City
+
+
+class CityAdminForm(forms.ModelForm):
+    class Meta:
+        model = City
+        fields = forms.ALL_FIELDS
+        widgets = {
+            'email_awesomplete': AwesompleteWidgetWrapper(
+                widget=forms.EmailInput,
+                min_chars=0,
+                suggestions=(
+                    'noreply@mail.com',
+                    'dont_disturb@mail.com',
+                    'mayor@mail.com',
+                    'support@mail.com',
+                ),
+            )
+        }
 ```
 
 ## Links
