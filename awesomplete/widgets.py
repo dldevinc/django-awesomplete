@@ -125,7 +125,14 @@ class AwesompleteWidgetWrapper(widgets.Widget):
     """
     template_name = 'awesomplete/widget_wrapper.html'
 
-    def __init__(self, widget=None, suggestions=(), min_chars=1, max_items=10, autofirst=True):
+    def __init__(
+        self,
+        widget=None,
+        suggestions=(),
+        min_chars=1,
+        max_items=10,
+        autofirst=True
+    ):
         if widget is None:
             widget = widgets.TextInput
         if isinstance(widget, type):
@@ -133,10 +140,10 @@ class AwesompleteWidgetWrapper(widgets.Widget):
         self.widget = widget
 
         self.attrs = self.widget.attrs
+        self.suggestions = suggestions
         self.min_chars = min_chars
         self.max_items = max_items
         self.autofirst = autofirst
-        self.suggestions = suggestions
 
     def __deepcopy__(self, memo):
         obj = copy.copy(self)
