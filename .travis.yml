@@ -10,6 +10,11 @@ before_install:
       pip install twine;
     fi
   - pip install -U pip setuptools wheel tox-travis
+  - if [ "$TRAVIS_PYTHON_VERSION" != "3.4" ]; then
+      pip install -r ./requirements_dev.txt;
+    else
+      pip install django-taggit;
+    fi
 branches:
   only:
     - master
