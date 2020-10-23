@@ -161,6 +161,41 @@ You can also pass additional parameters to `AwesompleteWidgetWrapper`:
     <br>
     *Default*: `True`
 
+## AwesompleteTagsWidgetWrapper
+This widget is a subclass of the `AwesompleteWidgetWrapper` and intended to be used
+for entering comma-separated values. 
+
+This widget can be used with [django-taggit](https://github.com/jazzband/django-taggit)
+
+```python
+from django import forms
+from awesomplete.widgets import AwesompleteTagsWidgetWrapper
+from taggit.models import Tag
+from taggit.forms import TagWidget
+from .models import City
+
+
+def get_tag_suggestions():
+    return Tag.objects.values_list(
+        'name',
+        flat=True
+    ).order_by('name').distinct()
+
+
+class CityForm(forms.ModelForm):
+    class Meta:
+        model = City
+        fields = forms.ALL_FIELDS
+        widgets = {
+            'tags': AwesompleteTagsWidgetWrapper(
+                widget=TagWidget,
+                suggestions=get_tag_suggestions
+            )
+        }
+
+```
+
+![](https://i.imgur.com/zWAWhN7.png)
 
 ## Links
 + [awesomplete](http://leaverou.github.io/awesomplete/) created by Lea Verou.

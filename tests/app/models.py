@@ -1,10 +1,12 @@
 from django.db import models
 from django.conf import settings
+from taggit.managers import TaggableManager
 
 
 class City(models.Model):
     name = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
+    tags = TaggableManager()
 
     def __str__(self):
         return self.name

@@ -2,7 +2,9 @@ from django import forms
 from django.conf import settings
 from django.contrib import admin
 from django.utils.timezone import now, timedelta
-from awesomplete.widgets import AwesompleteWidgetWrapper
+from awesomplete.widgets import AwesompleteWidgetWrapper, AwesompleteTagsWidgetWrapper
+from taggit.models import Tag
+from taggit.forms import TagWidget
 from .models import City, CityLanguage, Person
 
 
@@ -10,6 +12,13 @@ def get_country_suggestions():
     return City.objects.values_list(
         'country', flat=True
     ).order_by('country').distinct()
+
+
+def get_tag_suggestions():
+    return Tag.objects.values_list(
+        'name',
+        flat=True
+    ).order_by('name').distinct()
 
 
 def get_language_suggestions():
@@ -48,6 +57,10 @@ class CityAdminForm(forms.ModelForm):
         widgets = {
             'country': AwesompleteWidgetWrapper(
                 suggestions=get_country_suggestions
+            ),
+            'tags': AwesompleteTagsWidgetWrapper(
+                widget=TagWidget,
+                suggestions=get_tag_suggestions
             )
         }
 

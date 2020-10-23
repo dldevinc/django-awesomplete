@@ -675,6 +675,114 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add tag",
+    "content_type": 10,
+    "codename": "add_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change tag",
+    "content_type": 10,
+    "codename": "change_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete tag",
+    "content_type": 10,
+    "codename": "delete_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view tag",
+    "content_type": 10,
+    "codename": "view_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add tagged item",
+    "content_type": 11,
+    "codename": "add_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change tagged item",
+    "content_type": 11,
+    "codename": "change_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete tagged item",
+    "content_type": 11,
+    "codename": "delete_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view tagged item",
+    "content_type": 11,
+    "codename": "view_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add person",
+    "content_type": 12,
+    "codename": "add_person"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change person",
+    "content_type": 12,
+    "codename": "change_person"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete person",
+    "content_type": 12,
+    "codename": "delete_person"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view person",
+    "content_type": 12,
+    "codename": "view_person"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
@@ -765,6 +873,30 @@
   }
 },
 {
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "taggit",
+    "model": "tag"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "taggit",
+    "model": "taggeditem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "app",
+    "model": "person"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "4f80jr6lx4ewxkmrgnzbefvbb7czfhjd",
   "fields": {
@@ -817,9 +949,7 @@
   "pk": 279,
   "fields": {
     "name": "Babol",
-    "country": "Iran",
-    "mayor_email": "",
-    "date": null
+    "country": "Iran"
   }
 },
 {
@@ -827,9 +957,7 @@
   "pk": 280,
   "fields": {
     "name": "Babruysk",
-    "country": "Belarus",
-    "mayor_email": "",
-    "date": null
+    "country": "Belarus"
   }
 },
 {
@@ -837,9 +965,7 @@
   "pk": 281,
   "fields": {
     "name": "Bacabal",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -847,9 +973,7 @@
   "pk": 282,
   "fields": {
     "name": "Bacău",
-    "country": "Romania",
-    "mayor_email": "",
-    "date": null
+    "country": "Romania"
   }
 },
 {
@@ -857,9 +981,7 @@
   "pk": 283,
   "fields": {
     "name": "Bacolod",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -867,9 +989,7 @@
   "pk": 284,
   "fields": {
     "name": "Bacoor",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -877,9 +997,7 @@
   "pk": 285,
   "fields": {
     "name": "Badajoz",
-    "country": "Spain",
-    "mayor_email": "",
-    "date": null
+    "country": "Spain"
   }
 },
 {
@@ -887,9 +1005,7 @@
   "pk": 286,
   "fields": {
     "name": "Badalona",
-    "country": "Spain",
-    "mayor_email": "",
-    "date": null
+    "country": "Spain"
   }
 },
 {
@@ -897,9 +1013,7 @@
   "pk": 287,
   "fields": {
     "name": "Badlapur",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -907,9 +1021,7 @@
   "pk": 288,
   "fields": {
     "name": "Bafoussam",
-    "country": "Cameroon",
-    "mayor_email": "",
-    "date": null
+    "country": "Cameroon"
   }
 },
 {
@@ -917,9 +1029,7 @@
   "pk": 289,
   "fields": {
     "name": "Bagaha",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -927,9 +1037,7 @@
   "pk": 290,
   "fields": {
     "name": "Bagalkot",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -937,9 +1045,7 @@
   "pk": 291,
   "fields": {
     "name": "Bagé",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -947,9 +1053,7 @@
   "pk": 292,
   "fields": {
     "name": "Baghdad",
-    "country": "Iraq",
-    "mayor_email": "",
-    "date": null
+    "country": "Iraq"
   }
 },
 {
@@ -957,9 +1061,7 @@
   "pk": 293,
   "fields": {
     "name": "Baghlan",
-    "country": "Afghanistan",
-    "mayor_email": "",
-    "date": null
+    "country": "Afghanistan"
   }
 },
 {
@@ -967,9 +1069,7 @@
   "pk": 294,
   "fields": {
     "name": "Bago",
-    "country": "Myanmar",
-    "mayor_email": "",
-    "date": null
+    "country": "Myanmar"
   }
 },
 {
@@ -977,9 +1077,7 @@
   "pk": 295,
   "fields": {
     "name": "Bago City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -987,9 +1085,7 @@
   "pk": 296,
   "fields": {
     "name": "Baguio",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -997,9 +1093,7 @@
   "pk": 297,
   "fields": {
     "name": "Bahadurgarh",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1007,9 +1101,7 @@
   "pk": 298,
   "fields": {
     "name": "Baharampur",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1017,9 +1109,7 @@
   "pk": 299,
   "fields": {
     "name": "Bahawalnagar",
-    "country": "Pakistan",
-    "mayor_email": "",
-    "date": null
+    "country": "Pakistan"
   }
 },
 {
@@ -1027,9 +1117,7 @@
   "pk": 300,
   "fields": {
     "name": "Bahawalpur",
-    "country": "Pakistan",
-    "mayor_email": "",
-    "date": null
+    "country": "Pakistan"
   }
 },
 {
@@ -1037,9 +1125,7 @@
   "pk": 301,
   "fields": {
     "name": "Bahía Blanca",
-    "country": "Argentina",
-    "mayor_email": "",
-    "date": null
+    "country": "Argentina"
   }
 },
 {
@@ -1047,9 +1133,7 @@
   "pk": 302,
   "fields": {
     "name": "Bahir Dar",
-    "country": "Ethiopia",
-    "mayor_email": "",
-    "date": null
+    "country": "Ethiopia"
   }
 },
 {
@@ -1057,9 +1141,7 @@
   "pk": 303,
   "fields": {
     "name": "Bahraich",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1067,9 +1149,7 @@
   "pk": 304,
   "fields": {
     "name": "Baia Mare",
-    "country": "Romania",
-    "mayor_email": "",
-    "date": null
+    "country": "Romania"
   }
 },
 {
@@ -1077,9 +1157,7 @@
   "pk": 305,
   "fields": {
     "name": "Baicheng",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -1087,9 +1165,7 @@
   "pk": 306,
   "fields": {
     "name": "Baidoa",
-    "country": "Somalia",
-    "mayor_email": "",
-    "date": null
+    "country": "Somalia"
   }
 },
 {
@@ -1097,9 +1173,7 @@
   "pk": 307,
   "fields": {
     "name": "Baidyabati",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1107,9 +1181,7 @@
   "pk": 308,
   "fields": {
     "name": "Baise",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -1117,9 +1189,7 @@
   "pk": 309,
   "fields": {
     "name": "Baishan",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -1127,9 +1197,7 @@
   "pk": 310,
   "fields": {
     "name": "Baiyin",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -1137,9 +1205,7 @@
   "pk": 311,
   "fields": {
     "name": "Bajos de Haina",
-    "country": "Dominican Republic",
-    "mayor_email": "",
-    "date": null
+    "country": "Dominican Republic"
   }
 },
 {
@@ -1147,9 +1213,7 @@
   "pk": 312,
   "fields": {
     "name": "Bakersfield",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -1157,9 +1221,7 @@
   "pk": 313,
   "fields": {
     "name": "Baku",
-    "country": "Azerbaijan",
-    "mayor_email": "",
-    "date": null
+    "country": "Azerbaijan"
   }
 },
 {
@@ -1167,9 +1229,7 @@
   "pk": 314,
   "fields": {
     "name": "Balakovo",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -1177,9 +1237,7 @@
   "pk": 315,
   "fields": {
     "name": "Balashikha",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -1187,9 +1245,7 @@
   "pk": 316,
   "fields": {
     "name": "Baleshwar",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1197,9 +1253,7 @@
   "pk": 317,
   "fields": {
     "name": "Balıkesir",
-    "country": "Turkey",
-    "mayor_email": "",
-    "date": null
+    "country": "Turkey"
   }
 },
 {
@@ -1207,9 +1261,7 @@
   "pk": 318,
   "fields": {
     "name": "Balikpapan",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -1217,9 +1269,7 @@
   "pk": 319,
   "fields": {
     "name": "Baliuag",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1227,9 +1277,7 @@
   "pk": 320,
   "fields": {
     "name": "Ballarat",
-    "country": "Australia",
-    "mayor_email": "",
-    "date": null
+    "country": "Australia"
   }
 },
 {
@@ -1237,9 +1285,7 @@
   "pk": 321,
   "fields": {
     "name": "Ballia",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1247,9 +1293,7 @@
   "pk": 322,
   "fields": {
     "name": "Cabanatuan City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1257,9 +1301,7 @@
   "pk": 323,
   "fields": {
     "name": "Cabimas",
-    "country": "Venezuela",
-    "mayor_email": "",
-    "date": null
+    "country": "Venezuela"
   }
 },
 {
@@ -1267,9 +1309,7 @@
   "pk": 324,
   "fields": {
     "name": "Cabo de Santo Agostinho",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -1277,9 +1317,7 @@
   "pk": 325,
   "fields": {
     "name": "Cabo Frio",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -1287,9 +1325,7 @@
   "pk": 326,
   "fields": {
     "name": "Cabuyao City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1297,9 +1333,7 @@
   "pk": 327,
   "fields": {
     "name": "Cachoeirinha",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -1307,9 +1341,7 @@
   "pk": 328,
   "fields": {
     "name": "Cachoeiro de Itapemirim",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -1317,9 +1349,7 @@
   "pk": 329,
   "fields": {
     "name": "Cadiz City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1327,9 +1357,7 @@
   "pk": 330,
   "fields": {
     "name": "Cádiz",
-    "country": "Spain",
-    "mayor_email": "",
-    "date": null
+    "country": "Spain"
   }
 },
 {
@@ -1337,9 +1365,7 @@
   "pk": 331,
   "fields": {
     "name": "Caen",
-    "country": "France",
-    "mayor_email": "",
-    "date": null
+    "country": "France"
   }
 },
 {
@@ -1347,9 +1373,7 @@
   "pk": 332,
   "fields": {
     "name": "Cagayan de Oro",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1357,9 +1381,7 @@
   "pk": 333,
   "fields": {
     "name": "Cagliari",
-    "country": "Italy",
-    "mayor_email": "",
-    "date": null
+    "country": "Italy"
   }
 },
 {
@@ -1367,9 +1389,7 @@
   "pk": 334,
   "fields": {
     "name": "Cagua",
-    "country": "Venezuela",
-    "mayor_email": "",
-    "date": null
+    "country": "Venezuela"
   }
 },
 {
@@ -1377,9 +1397,7 @@
   "pk": 335,
   "fields": {
     "name": "Caguas",
-    "country": "Puerto Rico",
-    "mayor_email": "",
-    "date": null
+    "country": "Puerto Rico"
   }
 },
 {
@@ -1387,9 +1405,7 @@
   "pk": 336,
   "fields": {
     "name": "Cainta",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1397,9 +1413,7 @@
   "pk": 337,
   "fields": {
     "name": "Cairns",
-    "country": "Australia",
-    "mayor_email": "",
-    "date": null
+    "country": "Australia"
   }
 },
 {
@@ -1407,9 +1421,7 @@
   "pk": 338,
   "fields": {
     "name": "Cairo",
-    "country": "Egypt",
-    "mayor_email": "",
-    "date": null
+    "country": "Egypt"
   }
 },
 {
@@ -1417,9 +1429,7 @@
   "pk": 339,
   "fields": {
     "name": "Cajamarca",
-    "country": "Peru",
-    "mayor_email": "",
-    "date": null
+    "country": "Peru"
   }
 },
 {
@@ -1427,9 +1437,7 @@
   "pk": 340,
   "fields": {
     "name": "Calabar",
-    "country": "Nigeria",
-    "mayor_email": "",
-    "date": null
+    "country": "Nigeria"
   }
 },
 {
@@ -1437,9 +1445,7 @@
   "pk": 341,
   "fields": {
     "name": "Calama",
-    "country": "Chile",
-    "mayor_email": "",
-    "date": null
+    "country": "Chile"
   }
 },
 {
@@ -1447,9 +1453,7 @@
   "pk": 342,
   "fields": {
     "name": "Calamba City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1457,9 +1461,7 @@
   "pk": 343,
   "fields": {
     "name": "Calapan City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1467,9 +1469,7 @@
   "pk": 344,
   "fields": {
     "name": "Calbayog",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1477,9 +1477,7 @@
   "pk": 345,
   "fields": {
     "name": "Calgary",
-    "country": "Canada",
-    "mayor_email": "",
-    "date": null
+    "country": "Canada"
   }
 },
 {
@@ -1487,9 +1485,7 @@
   "pk": 346,
   "fields": {
     "name": "Cali",
-    "country": "Colombia",
-    "mayor_email": "",
-    "date": null
+    "country": "Colombia"
   }
 },
 {
@@ -1497,9 +1493,7 @@
   "pk": 347,
   "fields": {
     "name": "Caloocan",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1507,9 +1501,7 @@
   "pk": 348,
   "fields": {
     "name": "Cẩm Phả",
-    "country": "Vietnam",
-    "mayor_email": "",
-    "date": null
+    "country": "Vietnam"
   }
 },
 {
@@ -1517,9 +1509,7 @@
   "pk": 349,
   "fields": {
     "name": "Camaçari",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -1527,9 +1517,7 @@
   "pk": 350,
   "fields": {
     "name": "Camagüey",
-    "country": "Cuba",
-    "mayor_email": "",
-    "date": null
+    "country": "Cuba"
   }
 },
 {
@@ -1537,9 +1525,7 @@
   "pk": 351,
   "fields": {
     "name": "Camaragibe",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -1547,9 +1533,7 @@
   "pk": 352,
   "fields": {
     "name": "Da Lat",
-    "country": "Vietnam",
-    "mayor_email": "",
-    "date": null
+    "country": "Vietnam"
   }
 },
 {
@@ -1557,9 +1541,7 @@
   "pk": 353,
   "fields": {
     "name": "Da Nang",
-    "country": "Vietnam",
-    "mayor_email": "",
-    "date": null
+    "country": "Vietnam"
   }
 },
 {
@@ -1567,9 +1549,7 @@
   "pk": 354,
   "fields": {
     "name": "Dabgram",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1577,9 +1557,7 @@
   "pk": 355,
   "fields": {
     "name": "Dąbrowa Górnicza",
-    "country": "Poland",
-    "mayor_email": "",
-    "date": null
+    "country": "Poland"
   }
 },
 {
@@ -1587,9 +1565,7 @@
   "pk": 356,
   "fields": {
     "name": "Dadu",
-    "country": "Pakistan",
-    "mayor_email": "",
-    "date": null
+    "country": "Pakistan"
   }
 },
 {
@@ -1597,9 +1573,7 @@
   "pk": 357,
   "fields": {
     "name": "Daegu",
-    "country": "South Korea",
-    "mayor_email": "",
-    "date": null
+    "country": "South Korea"
   }
 },
 {
@@ -1607,9 +1581,7 @@
   "pk": 358,
   "fields": {
     "name": "Daejeon",
-    "country": "South Korea",
-    "mayor_email": "",
-    "date": null
+    "country": "South Korea"
   }
 },
 {
@@ -1617,9 +1589,7 @@
   "pk": 359,
   "fields": {
     "name": "Dagupan",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1627,9 +1597,7 @@
   "pk": 360,
   "fields": {
     "name": "Dahod",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1637,9 +1605,7 @@
   "pk": 361,
   "fields": {
     "name": "Daitō",
-    "country": "Japan",
-    "mayor_email": "",
-    "date": null
+    "country": "Japan"
   }
 },
 {
@@ -1647,9 +1613,7 @@
   "pk": 362,
   "fields": {
     "name": "Dakar",
-    "country": "Senegal",
-    "mayor_email": "",
-    "date": null
+    "country": "Senegal"
   }
 },
 {
@@ -1657,9 +1621,7 @@
   "pk": 363,
   "fields": {
     "name": "Dali",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -1667,9 +1629,7 @@
   "pk": 364,
   "fields": {
     "name": "Dalian",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -1677,9 +1637,7 @@
   "pk": 365,
   "fields": {
     "name": "Dallas",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -1687,9 +1645,7 @@
   "pk": 366,
   "fields": {
     "name": "Dallupura",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1697,9 +1653,7 @@
   "pk": 367,
   "fields": {
     "name": "Daloa",
-    "country": "Ivory Coast",
-    "mayor_email": "",
-    "date": null
+    "country": "Ivory Coast"
   }
 },
 {
@@ -1707,9 +1661,7 @@
   "pk": 368,
   "fields": {
     "name": "Daly City",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -1717,9 +1669,7 @@
   "pk": 369,
   "fields": {
     "name": "Damanhur",
-    "country": "Egypt",
-    "mayor_email": "",
-    "date": null
+    "country": "Egypt"
   }
 },
 {
@@ -1727,9 +1677,7 @@
   "pk": 370,
   "fields": {
     "name": "Damascus",
-    "country": "Syria",
-    "mayor_email": "",
-    "date": null
+    "country": "Syria"
   }
 },
 {
@@ -1737,9 +1685,7 @@
   "pk": 371,
   "fields": {
     "name": "Damietta",
-    "country": "Egypt",
-    "mayor_email": "",
-    "date": null
+    "country": "Egypt"
   }
 },
 {
@@ -1747,9 +1693,7 @@
   "pk": 372,
   "fields": {
     "name": "Dammam",
-    "country": "Saudi Arabia",
-    "mayor_email": "",
-    "date": null
+    "country": "Saudi Arabia"
   }
 },
 {
@@ -1757,9 +1701,7 @@
   "pk": 373,
   "fields": {
     "name": "Damoh",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1767,9 +1709,7 @@
   "pk": 374,
   "fields": {
     "name": "Danao City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1777,9 +1717,7 @@
   "pk": 375,
   "fields": {
     "name": "Danapur",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1787,9 +1725,7 @@
   "pk": 376,
   "fields": {
     "name": "Dandong",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -1797,9 +1733,7 @@
   "pk": 377,
   "fields": {
     "name": "Dangyang",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -1807,9 +1741,7 @@
   "pk": 378,
   "fields": {
     "name": "Danjiangkou",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -1817,9 +1749,7 @@
   "pk": 379,
   "fields": {
     "name": "Danlí",
-    "country": "Honduras",
-    "mayor_email": "",
-    "date": null
+    "country": "Honduras"
   }
 },
 {
@@ -1827,9 +1757,7 @@
   "pk": 380,
   "fields": {
     "name": "Danyang",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -1837,9 +1765,7 @@
   "pk": 381,
   "fields": {
     "name": "Daqing",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -1847,9 +1773,7 @@
   "pk": 382,
   "fields": {
     "name": "Dar Es Salaam",
-    "country": "Tanzania",
-    "mayor_email": "",
-    "date": null
+    "country": "Tanzania"
   }
 },
 {
@@ -1857,9 +1781,7 @@
   "pk": 383,
   "fields": {
     "name": "Daraga",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1867,9 +1789,7 @@
   "pk": 384,
   "fields": {
     "name": "Darbhanga",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1877,9 +1797,7 @@
   "pk": 385,
   "fields": {
     "name": "Darjeeling",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1887,9 +1805,7 @@
   "pk": 386,
   "fields": {
     "name": "Darmstadt",
-    "country": "Germany",
-    "mayor_email": "",
-    "date": null
+    "country": "Germany"
   }
 },
 {
@@ -1897,9 +1813,7 @@
   "pk": 387,
   "fields": {
     "name": "Darwin",
-    "country": "Australia",
-    "mayor_email": "",
-    "date": null
+    "country": "Australia"
   }
 },
 {
@@ -1907,9 +1821,7 @@
   "pk": 388,
   "fields": {
     "name": "Daska",
-    "country": "Pakistan",
-    "mayor_email": "",
-    "date": null
+    "country": "Pakistan"
   }
 },
 {
@@ -1917,9 +1829,7 @@
   "pk": 389,
   "fields": {
     "name": "Dasmariñas",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1927,9 +1837,7 @@
   "pk": 390,
   "fields": {
     "name": "Daşoguz",
-    "country": "Turkmenistan",
-    "mayor_email": "",
-    "date": null
+    "country": "Turkmenistan"
   }
 },
 {
@@ -1937,9 +1845,7 @@
   "pk": 391,
   "fields": {
     "name": "Datia",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1947,9 +1853,7 @@
   "pk": 392,
   "fields": {
     "name": "Datong",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -1957,9 +1861,7 @@
   "pk": 393,
   "fields": {
     "name": "Davangere",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -1967,9 +1869,7 @@
   "pk": 394,
   "fields": {
     "name": "Davao City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -1977,9 +1877,7 @@
   "pk": 395,
   "fields": {
     "name": "Dawei",
-    "country": "Myanmar",
-    "mayor_email": "",
-    "date": null
+    "country": "Myanmar"
   }
 },
 {
@@ -1987,9 +1885,7 @@
   "pk": 396,
   "fields": {
     "name": "Dayton",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -1997,9 +1893,7 @@
   "pk": 397,
   "fields": {
     "name": "Dazhou",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2007,9 +1901,7 @@
   "pk": 398,
   "fields": {
     "name": "Debrecen",
-    "country": "Hungary",
-    "mayor_email": "",
-    "date": null
+    "country": "Hungary"
   }
 },
 {
@@ -2017,9 +1909,7 @@
   "pk": 399,
   "fields": {
     "name": "Deesa",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2027,9 +1917,7 @@
   "pk": 400,
   "fields": {
     "name": "Dehiwala-Mount Lavinia",
-    "country": "Sri Lanka",
-    "mayor_email": "",
-    "date": null
+    "country": "Sri Lanka"
   }
 },
 {
@@ -2037,9 +1925,7 @@
   "pk": 401,
   "fields": {
     "name": "Dehradun",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2047,9 +1933,7 @@
   "pk": 402,
   "fields": {
     "name": "Dehri",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2057,9 +1941,7 @@
   "pk": 403,
   "fields": {
     "name": "Deir ez Zor",
-    "country": "Syria",
-    "mayor_email": "",
-    "date": null
+    "country": "Syria"
   }
 },
 {
@@ -2067,9 +1949,7 @@
   "pk": 404,
   "fields": {
     "name": "Delft",
-    "country": "Netherlands",
-    "mayor_email": "",
-    "date": null
+    "country": "Netherlands"
   }
 },
 {
@@ -2077,9 +1957,7 @@
   "pk": 405,
   "fields": {
     "name": "Delhi Cantonment",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2087,9 +1965,7 @@
   "pk": 406,
   "fields": {
     "name": "Delhi",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2097,9 +1973,7 @@
   "pk": 407,
   "fields": {
     "name": "Delicias",
-    "country": "Mexico",
-    "mayor_email": "",
-    "date": null
+    "country": "Mexico"
   }
 },
 {
@@ -2107,9 +1981,7 @@
   "pk": 408,
   "fields": {
     "name": "Delmas",
-    "country": "Haiti",
-    "mayor_email": "",
-    "date": null
+    "country": "Haiti"
   }
 },
 {
@@ -2117,9 +1989,7 @@
   "pk": 409,
   "fields": {
     "name": "Dengzhou",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2127,9 +1997,7 @@
   "pk": 410,
   "fields": {
     "name": "Denizli",
-    "country": "Turkey",
-    "mayor_email": "",
-    "date": null
+    "country": "Turkey"
   }
 },
 {
@@ -2137,9 +2005,7 @@
   "pk": 411,
   "fields": {
     "name": "Denpasar",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -2147,9 +2013,7 @@
   "pk": 412,
   "fields": {
     "name": "Denton",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -2157,9 +2021,7 @@
   "pk": 413,
   "fields": {
     "name": "Denver",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -2167,9 +2029,7 @@
   "pk": 414,
   "fields": {
     "name": "Deoghar",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2177,9 +2037,7 @@
   "pk": 415,
   "fields": {
     "name": "Deoli",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2187,9 +2045,7 @@
   "pk": 416,
   "fields": {
     "name": "Deoria",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2197,9 +2053,7 @@
   "pk": 417,
   "fields": {
     "name": "Depok",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -2207,9 +2061,7 @@
   "pk": 418,
   "fields": {
     "name": "Dera Ghazi Khan",
-    "country": "Pakistan",
-    "mayor_email": "",
-    "date": null
+    "country": "Pakistan"
   }
 },
 {
@@ -2217,9 +2069,7 @@
   "pk": 419,
   "fields": {
     "name": "Derbent",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -2227,9 +2077,7 @@
   "pk": 420,
   "fields": {
     "name": "Derby",
-    "country": "United Kingdom",
-    "mayor_email": "",
-    "date": null
+    "country": "United Kingdom"
   }
 },
 {
@@ -2237,9 +2085,7 @@
   "pk": 421,
   "fields": {
     "name": "Derince",
-    "country": "Turkey",
-    "mayor_email": "",
-    "date": null
+    "country": "Turkey"
   }
 },
 {
@@ -2247,9 +2093,7 @@
   "pk": 422,
   "fields": {
     "name": "Derry",
-    "country": "United Kingdom",
-    "mayor_email": "",
-    "date": null
+    "country": "United Kingdom"
   }
 },
 {
@@ -2257,9 +2101,7 @@
   "pk": 423,
   "fields": {
     "name": "Des Moines",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -2267,9 +2109,7 @@
   "pk": 424,
   "fields": {
     "name": "Dessie",
-    "country": "Ethiopia",
-    "mayor_email": "",
-    "date": null
+    "country": "Ethiopia"
   }
 },
 {
@@ -2277,9 +2117,7 @@
   "pk": 425,
   "fields": {
     "name": "Detroit",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -2287,9 +2125,7 @@
   "pk": 426,
   "fields": {
     "name": "Dewas",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2297,9 +2133,7 @@
   "pk": 427,
   "fields": {
     "name": "Deyang",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2307,9 +2141,7 @@
   "pk": 428,
   "fields": {
     "name": "Dezful",
-    "country": "Iran",
-    "mayor_email": "",
-    "date": null
+    "country": "Iran"
   }
 },
 {
@@ -2317,9 +2149,7 @@
   "pk": 429,
   "fields": {
     "name": "Dezhou",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2327,9 +2157,7 @@
   "pk": 430,
   "fields": {
     "name": "Dhahran",
-    "country": "Saudi Arabia",
-    "mayor_email": "",
-    "date": null
+    "country": "Saudi Arabia"
   }
 },
 {
@@ -2337,9 +2165,7 @@
   "pk": 431,
   "fields": {
     "name": "Dhaka",
-    "country": "Bangladesh",
-    "mayor_email": "",
-    "date": null
+    "country": "Bangladesh"
   }
 },
 {
@@ -2347,9 +2173,7 @@
   "pk": 432,
   "fields": {
     "name": "Dhamtari",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2357,9 +2181,7 @@
   "pk": 433,
   "fields": {
     "name": "Dhanbad",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2367,9 +2189,7 @@
   "pk": 434,
   "fields": {
     "name": "Dhangadhi",
-    "country": "Nepal",
-    "mayor_email": "",
-    "date": null
+    "country": "Nepal"
   }
 },
 {
@@ -2377,9 +2197,7 @@
   "pk": 435,
   "fields": {
     "name": "Dharan",
-    "country": "Nepal",
-    "mayor_email": "",
-    "date": null
+    "country": "Nepal"
   }
 },
 {
@@ -2387,9 +2205,7 @@
   "pk": 436,
   "fields": {
     "name": "Dharmavaram",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2397,9 +2213,7 @@
   "pk": 437,
   "fields": {
     "name": "Dholpur",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2407,9 +2221,7 @@
   "pk": 438,
   "fields": {
     "name": "Dhule",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2417,9 +2229,7 @@
   "pk": 439,
   "fields": {
     "name": "Diadema",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -2427,9 +2237,7 @@
   "pk": 440,
   "fields": {
     "name": "Diaobingshan",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2437,9 +2245,7 @@
   "pk": 441,
   "fields": {
     "name": "Dibrugarh",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2447,9 +2253,7 @@
   "pk": 442,
   "fields": {
     "name": "Digos City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -2457,9 +2261,7 @@
   "pk": 443,
   "fields": {
     "name": "Dijon",
-    "country": "France",
-    "mayor_email": "",
-    "date": null
+    "country": "France"
   }
 },
 {
@@ -2467,9 +2269,7 @@
   "pk": 444,
   "fields": {
     "name": "Dili",
-    "country": "Timor-Leste",
-    "mayor_email": "",
-    "date": null
+    "country": "Timor-Leste"
   }
 },
 {
@@ -2477,9 +2277,7 @@
   "pk": 445,
   "fields": {
     "name": "Dimapur",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2487,9 +2285,7 @@
   "pk": 446,
   "fields": {
     "name": "Dimitrovgrad",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -2497,9 +2293,7 @@
   "pk": 447,
   "fields": {
     "name": "Dinajpur",
-    "country": "Bangladesh",
-    "mayor_email": "",
-    "date": null
+    "country": "Bangladesh"
   }
 },
 {
@@ -2507,9 +2301,7 @@
   "pk": 448,
   "fields": {
     "name": "Dindigul",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2517,9 +2309,7 @@
   "pk": 449,
   "fields": {
     "name": "Dingzhou",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2527,9 +2317,7 @@
   "pk": 450,
   "fields": {
     "name": "Diourbel",
-    "country": "Senegal",
-    "mayor_email": "",
-    "date": null
+    "country": "Senegal"
   }
 },
 {
@@ -2537,9 +2325,7 @@
   "pk": 451,
   "fields": {
     "name": "Dipolog City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -2547,9 +2333,7 @@
   "pk": 452,
   "fields": {
     "name": "Dire Dawa",
-    "country": "Ethiopia",
-    "mayor_email": "",
-    "date": null
+    "country": "Ethiopia"
   }
 },
 {
@@ -2557,9 +2341,7 @@
   "pk": 453,
   "fields": {
     "name": "Divinópolis",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -2567,9 +2349,7 @@
   "pk": 454,
   "fields": {
     "name": "Divo",
-    "country": "Ivory Coast",
-    "mayor_email": "",
-    "date": null
+    "country": "Ivory Coast"
   }
 },
 {
@@ -2577,9 +2357,7 @@
   "pk": 455,
   "fields": {
     "name": "Diwaniyah",
-    "country": "Iraq",
-    "mayor_email": "",
-    "date": null
+    "country": "Iraq"
   }
 },
 {
@@ -2587,9 +2365,7 @@
   "pk": 456,
   "fields": {
     "name": "Diyarbakır",
-    "country": "Turkey",
-    "mayor_email": "",
-    "date": null
+    "country": "Turkey"
   }
 },
 {
@@ -2597,9 +2373,7 @@
   "pk": 457,
   "fields": {
     "name": "Djelfa",
-    "country": "Algeria",
-    "mayor_email": "",
-    "date": null
+    "country": "Algeria"
   }
 },
 {
@@ -2607,9 +2381,7 @@
   "pk": 458,
   "fields": {
     "name": "Djibouti",
-    "country": "Djibouti",
-    "mayor_email": "",
-    "date": null
+    "country": "Djibouti"
   }
 },
 {
@@ -2617,9 +2389,7 @@
   "pk": 459,
   "fields": {
     "name": "Dnipro",
-    "country": "Ukraine",
-    "mayor_email": "",
-    "date": null
+    "country": "Ukraine"
   }
 },
 {
@@ -2627,9 +2397,7 @@
   "pk": 460,
   "fields": {
     "name": "Dodoma",
-    "country": "Tanzania",
-    "mayor_email": "",
-    "date": null
+    "country": "Tanzania"
   }
 },
 {
@@ -2637,9 +2405,7 @@
   "pk": 461,
   "fields": {
     "name": "Doha",
-    "country": "Qatar",
-    "mayor_email": "",
-    "date": null
+    "country": "Qatar"
   }
 },
 {
@@ -2647,9 +2413,7 @@
   "pk": 462,
   "fields": {
     "name": "Dohuk",
-    "country": "Iraq",
-    "mayor_email": "",
-    "date": null
+    "country": "Iraq"
   }
 },
 {
@@ -2657,9 +2421,7 @@
   "pk": 463,
   "fields": {
     "name": "Dombivli",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2667,9 +2429,7 @@
   "pk": 464,
   "fields": {
     "name": "Donetsk",
-    "country": "Ukraine",
-    "mayor_email": "",
-    "date": null
+    "country": "Ukraine"
   }
 },
 {
@@ -2677,9 +2437,7 @@
   "pk": 465,
   "fields": {
     "name": "Dongchuan",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2687,9 +2445,7 @@
   "pk": 466,
   "fields": {
     "name": "Dongguan",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2697,9 +2453,7 @@
   "pk": 467,
   "fields": {
     "name": "Dongtai",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2707,9 +2461,7 @@
   "pk": 468,
   "fields": {
     "name": "Dongyang",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2717,9 +2469,7 @@
   "pk": 469,
   "fields": {
     "name": "Dongying",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2727,9 +2477,7 @@
   "pk": 470,
   "fields": {
     "name": "Dordrecht",
-    "country": "Netherlands",
-    "mayor_email": "",
-    "date": null
+    "country": "Netherlands"
   }
 },
 {
@@ -2737,9 +2485,7 @@
   "pk": 471,
   "fields": {
     "name": "Dortmund",
-    "country": "Germany",
-    "mayor_email": "",
-    "date": null
+    "country": "Germany"
   }
 },
 {
@@ -2747,9 +2493,7 @@
   "pk": 472,
   "fields": {
     "name": "Dos Hermanas",
-    "country": "Spain",
-    "mayor_email": "",
-    "date": null
+    "country": "Spain"
   }
 },
 {
@@ -2757,9 +2501,7 @@
   "pk": 473,
   "fields": {
     "name": "Dos Quebradas",
-    "country": "Colombia",
-    "mayor_email": "",
-    "date": null
+    "country": "Colombia"
   }
 },
 {
@@ -2767,9 +2509,7 @@
   "pk": 474,
   "fields": {
     "name": "Douala",
-    "country": "Cameroon",
-    "mayor_email": "",
-    "date": null
+    "country": "Cameroon"
   }
 },
 {
@@ -2777,9 +2517,7 @@
   "pk": 475,
   "fields": {
     "name": "Dourados",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -2787,9 +2525,7 @@
   "pk": 476,
   "fields": {
     "name": "Downey",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -2797,9 +2533,7 @@
   "pk": 477,
   "fields": {
     "name": "Dresden",
-    "country": "Germany",
-    "mayor_email": "",
-    "date": null
+    "country": "Germany"
   }
 },
 {
@@ -2807,9 +2541,7 @@
   "pk": 478,
   "fields": {
     "name": "Dubai",
-    "country": "United Arab Emirates",
-    "mayor_email": "",
-    "date": null
+    "country": "United Arab Emirates"
   }
 },
 {
@@ -2817,9 +2549,7 @@
   "pk": 479,
   "fields": {
     "name": "Dublin",
-    "country": "Ireland",
-    "mayor_email": "",
-    "date": null
+    "country": "Ireland"
   }
 },
 {
@@ -2827,9 +2557,7 @@
   "pk": 480,
   "fields": {
     "name": "Dudley",
-    "country": "United Kingdom",
-    "mayor_email": "",
-    "date": null
+    "country": "United Kingdom"
   }
 },
 {
@@ -2837,9 +2565,7 @@
   "pk": 481,
   "fields": {
     "name": "Duisburg",
-    "country": "Germany",
-    "mayor_email": "",
-    "date": null
+    "country": "Germany"
   }
 },
 {
@@ -2847,9 +2573,7 @@
   "pk": 482,
   "fields": {
     "name": "Duitama",
-    "country": "Colombia",
-    "mayor_email": "",
-    "date": null
+    "country": "Colombia"
   }
 },
 {
@@ -2857,9 +2581,7 @@
   "pk": 483,
   "fields": {
     "name": "Dujail",
-    "country": "Iraq",
-    "mayor_email": "",
-    "date": null
+    "country": "Iraq"
   }
 },
 {
@@ -2867,9 +2589,7 @@
   "pk": 484,
   "fields": {
     "name": "Dujiangyan City",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2877,9 +2597,7 @@
   "pk": 485,
   "fields": {
     "name": "Dum Dum",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2887,9 +2605,7 @@
   "pk": 486,
   "fields": {
     "name": "Dumaguete",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -2897,9 +2613,7 @@
   "pk": 487,
   "fields": {
     "name": "Dundee",
-    "country": "United Kingdom",
-    "mayor_email": "",
-    "date": null
+    "country": "United Kingdom"
   }
 },
 {
@@ -2907,9 +2621,7 @@
   "pk": 488,
   "fields": {
     "name": "Dunedin",
-    "country": "New Zealand",
-    "mayor_email": "",
-    "date": null
+    "country": "New Zealand"
   }
 },
 {
@@ -2917,9 +2629,7 @@
   "pk": 489,
   "fields": {
     "name": "Dunhua",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2927,9 +2637,7 @@
   "pk": 490,
   "fields": {
     "name": "Dunhuang",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -2937,9 +2645,7 @@
   "pk": 491,
   "fields": {
     "name": "Duque de Caxias",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -2947,9 +2653,7 @@
   "pk": 492,
   "fields": {
     "name": "Durán",
-    "country": "Ecuador",
-    "mayor_email": "",
-    "date": null
+    "country": "Ecuador"
   }
 },
 {
@@ -2957,9 +2661,7 @@
   "pk": 493,
   "fields": {
     "name": "Durango",
-    "country": "Mexico",
-    "mayor_email": "",
-    "date": null
+    "country": "Mexico"
   }
 },
 {
@@ -2967,9 +2669,7 @@
   "pk": 494,
   "fields": {
     "name": "Durban",
-    "country": "South Africa",
-    "mayor_email": "",
-    "date": null
+    "country": "South Africa"
   }
 },
 {
@@ -2977,9 +2677,7 @@
   "pk": 495,
   "fields": {
     "name": "Durg",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2987,9 +2685,7 @@
   "pk": 496,
   "fields": {
     "name": "Durgapur",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -2997,9 +2693,7 @@
   "pk": 497,
   "fields": {
     "name": "Durham",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -3007,9 +2701,7 @@
   "pk": 498,
   "fields": {
     "name": "Durrës",
-    "country": "Albania",
-    "mayor_email": "",
-    "date": null
+    "country": "Albania"
   }
 },
 {
@@ -3017,9 +2709,7 @@
   "pk": 499,
   "fields": {
     "name": "Dushanbe",
-    "country": "Tajikistan",
-    "mayor_email": "",
-    "date": null
+    "country": "Tajikistan"
   }
 },
 {
@@ -3027,9 +2717,7 @@
   "pk": 500,
   "fields": {
     "name": "Düsseldorf",
-    "country": "Germany",
-    "mayor_email": "",
-    "date": null
+    "country": "Germany"
   }
 },
 {
@@ -3037,9 +2725,7 @@
   "pk": 501,
   "fields": {
     "name": "Duyun",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -3047,9 +2733,7 @@
   "pk": 502,
   "fields": {
     "name": "Düzce",
-    "country": "Turkey",
-    "mayor_email": "",
-    "date": null
+    "country": "Turkey"
   }
 },
 {
@@ -3057,9 +2741,7 @@
   "pk": 503,
   "fields": {
     "name": "Dzerzhinsk",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -3067,9 +2749,7 @@
   "pk": 504,
   "fields": {
     "name": "Paarl",
-    "country": "South Africa",
-    "mayor_email": "",
-    "date": null
+    "country": "South Africa"
   }
 },
 {
@@ -3077,9 +2757,7 @@
   "pk": 505,
   "fields": {
     "name": "Pabna",
-    "country": "Bangladesh",
-    "mayor_email": "",
-    "date": null
+    "country": "Bangladesh"
   }
 },
 {
@@ -3087,9 +2765,7 @@
   "pk": 506,
   "fields": {
     "name": "Pachuca",
-    "country": "Mexico",
-    "mayor_email": "",
-    "date": null
+    "country": "Mexico"
   }
 },
 {
@@ -3097,9 +2773,7 @@
   "pk": 507,
   "fields": {
     "name": "Padang",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3107,9 +2781,7 @@
   "pk": 508,
   "fields": {
     "name": "Paderborn",
-    "country": "Germany",
-    "mayor_email": "",
-    "date": null
+    "country": "Germany"
   }
 },
 {
@@ -3117,9 +2789,7 @@
   "pk": 509,
   "fields": {
     "name": "Padua",
-    "country": "Italy",
-    "mayor_email": "",
-    "date": null
+    "country": "Italy"
   }
 },
 {
@@ -3127,9 +2797,7 @@
   "pk": 510,
   "fields": {
     "name": "Pagadian City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -3137,9 +2805,7 @@
   "pk": 511,
   "fields": {
     "name": "Paita",
-    "country": "Peru",
-    "mayor_email": "",
-    "date": null
+    "country": "Peru"
   }
 },
 {
@@ -3147,9 +2813,7 @@
   "pk": 512,
   "fields": {
     "name": "Pakalongan",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3157,9 +2821,7 @@
   "pk": 513,
   "fields": {
     "name": "Pakan Baru",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3167,9 +2829,7 @@
   "pk": 514,
   "fields": {
     "name": "Pakdasht",
-    "country": "Iran",
-    "mayor_email": "",
-    "date": null
+    "country": "Iran"
   }
 },
 {
@@ -3177,9 +2837,7 @@
   "pk": 515,
   "fields": {
     "name": "Pakpattan",
-    "country": "Pakistan",
-    "mayor_email": "",
-    "date": null
+    "country": "Pakistan"
   }
 },
 {
@@ -3187,9 +2845,7 @@
   "pk": 516,
   "fields": {
     "name": "Palakkad",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3197,9 +2853,7 @@
   "pk": 517,
   "fields": {
     "name": "Palangkaraya",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3207,9 +2861,7 @@
   "pk": 518,
   "fields": {
     "name": "Palanpur",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3217,9 +2869,7 @@
   "pk": 519,
   "fields": {
     "name": "Palembang",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3227,9 +2877,7 @@
   "pk": 520,
   "fields": {
     "name": "Palermo",
-    "country": "Italy",
-    "mayor_email": "",
-    "date": null
+    "country": "Italy"
   }
 },
 {
@@ -3237,9 +2885,7 @@
   "pk": 521,
   "fields": {
     "name": "Palhoça",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3247,9 +2893,7 @@
   "pk": 522,
   "fields": {
     "name": "Pali",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3257,9 +2901,7 @@
   "pk": 523,
   "fields": {
     "name": "Pallavaram",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3267,9 +2909,7 @@
   "pk": 524,
   "fields": {
     "name": "Palm Bay",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -3277,9 +2917,7 @@
   "pk": 525,
   "fields": {
     "name": "Palma de Mallorca",
-    "country": "Spain",
-    "mayor_email": "",
-    "date": null
+    "country": "Spain"
   }
 },
 {
@@ -3287,9 +2925,7 @@
   "pk": 526,
   "fields": {
     "name": "Palmas",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3297,9 +2933,7 @@
   "pk": 527,
   "fields": {
     "name": "Paarl",
-    "country": "South Africa",
-    "mayor_email": "",
-    "date": null
+    "country": "South Africa"
   }
 },
 {
@@ -3307,9 +2941,7 @@
   "pk": 528,
   "fields": {
     "name": "Pabna",
-    "country": "Bangladesh",
-    "mayor_email": "",
-    "date": null
+    "country": "Bangladesh"
   }
 },
 {
@@ -3317,9 +2949,7 @@
   "pk": 529,
   "fields": {
     "name": "Pachuca",
-    "country": "Mexico",
-    "mayor_email": "",
-    "date": null
+    "country": "Mexico"
   }
 },
 {
@@ -3327,9 +2957,7 @@
   "pk": 530,
   "fields": {
     "name": "Padang",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3337,9 +2965,7 @@
   "pk": 531,
   "fields": {
     "name": "Paderborn",
-    "country": "Germany",
-    "mayor_email": "",
-    "date": null
+    "country": "Germany"
   }
 },
 {
@@ -3347,9 +2973,7 @@
   "pk": 532,
   "fields": {
     "name": "Padua",
-    "country": "Italy",
-    "mayor_email": "",
-    "date": null
+    "country": "Italy"
   }
 },
 {
@@ -3357,9 +2981,7 @@
   "pk": 533,
   "fields": {
     "name": "Pagadian City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -3367,9 +2989,7 @@
   "pk": 534,
   "fields": {
     "name": "Paita",
-    "country": "Peru",
-    "mayor_email": "",
-    "date": null
+    "country": "Peru"
   }
 },
 {
@@ -3377,9 +2997,7 @@
   "pk": 535,
   "fields": {
     "name": "Pakalongan",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3387,9 +3005,7 @@
   "pk": 536,
   "fields": {
     "name": "Pakan Baru",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3397,9 +3013,7 @@
   "pk": 537,
   "fields": {
     "name": "Pakdasht",
-    "country": "Iran",
-    "mayor_email": "",
-    "date": null
+    "country": "Iran"
   }
 },
 {
@@ -3407,9 +3021,7 @@
   "pk": 538,
   "fields": {
     "name": "Pakpattan",
-    "country": "Pakistan",
-    "mayor_email": "",
-    "date": null
+    "country": "Pakistan"
   }
 },
 {
@@ -3417,9 +3029,7 @@
   "pk": 539,
   "fields": {
     "name": "Palakkad",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3427,9 +3037,7 @@
   "pk": 540,
   "fields": {
     "name": "Palangkaraya",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3437,9 +3045,7 @@
   "pk": 541,
   "fields": {
     "name": "Palanpur",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3447,9 +3053,7 @@
   "pk": 542,
   "fields": {
     "name": "Palembang",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3457,9 +3061,7 @@
   "pk": 543,
   "fields": {
     "name": "Palermo",
-    "country": "Italy",
-    "mayor_email": "",
-    "date": null
+    "country": "Italy"
   }
 },
 {
@@ -3467,9 +3069,7 @@
   "pk": 544,
   "fields": {
     "name": "Palhoça",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3477,9 +3077,7 @@
   "pk": 545,
   "fields": {
     "name": "Pali",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3487,9 +3085,7 @@
   "pk": 546,
   "fields": {
     "name": "Pallavaram",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3497,9 +3093,7 @@
   "pk": 547,
   "fields": {
     "name": "Palm Bay",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -3507,9 +3101,7 @@
   "pk": 548,
   "fields": {
     "name": "Palma de Mallorca",
-    "country": "Spain",
-    "mayor_email": "",
-    "date": null
+    "country": "Spain"
   }
 },
 {
@@ -3517,9 +3109,7 @@
   "pk": 549,
   "fields": {
     "name": "Palmas",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3527,9 +3117,7 @@
   "pk": 550,
   "fields": {
     "name": "Palmdale, California",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -3537,9 +3125,7 @@
   "pk": 551,
   "fields": {
     "name": "Palmira",
-    "country": "Colombia",
-    "mayor_email": "",
-    "date": null
+    "country": "Colombia"
   }
 },
 {
@@ -3547,9 +3133,7 @@
   "pk": 552,
   "fields": {
     "name": "Palopo",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3557,9 +3141,7 @@
   "pk": 553,
   "fields": {
     "name": "Palu",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3567,9 +3149,7 @@
   "pk": 554,
   "fields": {
     "name": "Palwal",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3577,9 +3157,7 @@
   "pk": 555,
   "fields": {
     "name": "Pamplona",
-    "country": "Spain",
-    "mayor_email": "",
-    "date": null
+    "country": "Spain"
   }
 },
 {
@@ -3587,9 +3165,7 @@
   "pk": 556,
   "fields": {
     "name": "Panabo City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -3597,9 +3173,7 @@
   "pk": 557,
   "fields": {
     "name": "Panama City",
-    "country": "Panama",
-    "mayor_email": "",
-    "date": null
+    "country": "Panama"
   }
 },
 {
@@ -3607,9 +3181,7 @@
   "pk": 558,
   "fields": {
     "name": "Panchkula",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3617,9 +3189,7 @@
   "pk": 559,
   "fields": {
     "name": "Pangkal Pinang",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3627,9 +3197,7 @@
   "pk": 560,
   "fields": {
     "name": "Panihati",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3637,9 +3205,7 @@
   "pk": 561,
   "fields": {
     "name": "Panipat",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3647,9 +3213,7 @@
   "pk": 562,
   "fields": {
     "name": "Panjin",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -3657,9 +3221,7 @@
   "pk": 563,
   "fields": {
     "name": "Panvel",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3667,9 +3229,7 @@
   "pk": 564,
   "fields": {
     "name": "Panzhihua",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -3677,9 +3237,7 @@
   "pk": 565,
   "fields": {
     "name": "Paradise, Nevada",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -3687,9 +3245,7 @@
   "pk": 566,
   "fields": {
     "name": "Parakou",
-    "country": "Benin",
-    "mayor_email": "",
-    "date": null
+    "country": "Benin"
   }
 },
 {
@@ -3697,9 +3253,7 @@
   "pk": 567,
   "fields": {
     "name": "Paramaribo",
-    "country": "Suriname",
-    "mayor_email": "",
-    "date": null
+    "country": "Suriname"
   }
 },
 {
@@ -3707,9 +3261,7 @@
   "pk": 568,
   "fields": {
     "name": "Paraná",
-    "country": "Argentina",
-    "mayor_email": "",
-    "date": null
+    "country": "Argentina"
   }
 },
 {
@@ -3717,9 +3269,7 @@
   "pk": 569,
   "fields": {
     "name": "Paranaguá",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3727,9 +3277,7 @@
   "pk": 570,
   "fields": {
     "name": "Parañaque",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -3737,9 +3285,7 @@
   "pk": 571,
   "fields": {
     "name": "Parauapebas",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3747,9 +3293,7 @@
   "pk": 572,
   "fields": {
     "name": "Parbhani",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3757,9 +3301,7 @@
   "pk": 573,
   "fields": {
     "name": "Parepare",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3767,9 +3309,7 @@
   "pk": 574,
   "fields": {
     "name": "Parintins",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3777,9 +3317,7 @@
   "pk": 575,
   "fields": {
     "name": "Paris",
-    "country": "France",
-    "mayor_email": "",
-    "date": null
+    "country": "France"
   }
 },
 {
@@ -3787,9 +3325,7 @@
   "pk": 576,
   "fields": {
     "name": "Parla",
-    "country": "Spain",
-    "mayor_email": "",
-    "date": null
+    "country": "Spain"
   }
 },
 {
@@ -3797,9 +3333,7 @@
   "pk": 577,
   "fields": {
     "name": "Parma",
-    "country": "Italy",
-    "mayor_email": "",
-    "date": null
+    "country": "Italy"
   }
 },
 {
@@ -3807,9 +3341,7 @@
   "pk": 578,
   "fields": {
     "name": "Parnaíba",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3817,9 +3349,7 @@
   "pk": 579,
   "fields": {
     "name": "Parnamirim",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3827,9 +3357,7 @@
   "pk": 580,
   "fields": {
     "name": "Parral",
-    "country": "Mexico",
-    "mayor_email": "",
-    "date": null
+    "country": "Mexico"
   }
 },
 {
@@ -3837,9 +3365,7 @@
   "pk": 581,
   "fields": {
     "name": "Pasadena, California",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -3847,9 +3373,7 @@
   "pk": 582,
   "fields": {
     "name": "Pasadena, Texas",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -3857,9 +3381,7 @@
   "pk": 583,
   "fields": {
     "name": "Pasay",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -3867,9 +3389,7 @@
   "pk": 584,
   "fields": {
     "name": "Pasig",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -3877,9 +3397,7 @@
   "pk": 585,
   "fields": {
     "name": "Passo Fundo",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3887,9 +3405,7 @@
   "pk": 586,
   "fields": {
     "name": "Passos",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3897,9 +3413,7 @@
   "pk": 587,
   "fields": {
     "name": "Pasto",
-    "country": "Colombia",
-    "mayor_email": "",
-    "date": null
+    "country": "Colombia"
   }
 },
 {
@@ -3907,9 +3421,7 @@
   "pk": 588,
   "fields": {
     "name": "Pasuruan",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -3917,9 +3429,7 @@
   "pk": 589,
   "fields": {
     "name": "Patan",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3927,9 +3437,7 @@
   "pk": 590,
   "fields": {
     "name": "Paterson",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -3937,9 +3445,7 @@
   "pk": 591,
   "fields": {
     "name": "Pathankot",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3947,9 +3453,7 @@
   "pk": 592,
   "fields": {
     "name": "Pathein",
-    "country": "Myanmar",
-    "mayor_email": "",
-    "date": null
+    "country": "Myanmar"
   }
 },
 {
@@ -3957,9 +3461,7 @@
   "pk": 593,
   "fields": {
     "name": "Patiala",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3967,9 +3469,7 @@
   "pk": 594,
   "fields": {
     "name": "Patna",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -3977,9 +3477,7 @@
   "pk": 595,
   "fields": {
     "name": "Patos de Minas",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3987,9 +3485,7 @@
   "pk": 596,
   "fields": {
     "name": "Patos",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -3997,9 +3493,7 @@
   "pk": 597,
   "fields": {
     "name": "Patras",
-    "country": "Greece",
-    "mayor_email": "",
-    "date": null
+    "country": "Greece"
   }
 },
 {
@@ -4007,9 +3501,7 @@
   "pk": 598,
   "fields": {
     "name": "Paulínia",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -4017,9 +3509,7 @@
   "pk": 599,
   "fields": {
     "name": "Paulista",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -4027,9 +3517,7 @@
   "pk": 600,
   "fields": {
     "name": "Paulo Afonso",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -4037,9 +3525,7 @@
   "pk": 601,
   "fields": {
     "name": "Pavlodar",
-    "country": "Kazakhstan",
-    "mayor_email": "",
-    "date": null
+    "country": "Kazakhstan"
   }
 },
 {
@@ -4047,9 +3533,7 @@
   "pk": 602,
   "fields": {
     "name": "Pavlohrad",
-    "country": "Ukraine",
-    "mayor_email": "",
-    "date": null
+    "country": "Ukraine"
   }
 },
 {
@@ -4057,9 +3541,7 @@
   "pk": 603,
   "fields": {
     "name": "Pécs",
-    "country": "Hungary",
-    "mayor_email": "",
-    "date": null
+    "country": "Hungary"
   }
 },
 {
@@ -4067,9 +3549,7 @@
   "pk": 604,
   "fields": {
     "name": "Pelotas",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -4077,9 +3557,7 @@
   "pk": 605,
   "fields": {
     "name": "Pematang Siantar",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -4087,9 +3565,7 @@
   "pk": 606,
   "fields": {
     "name": "Pemba",
-    "country": "Mozambique",
-    "mayor_email": "",
-    "date": null
+    "country": "Mozambique"
   }
 },
 {
@@ -4097,9 +3573,7 @@
   "pk": 607,
   "fields": {
     "name": "Pembroke Pines, Florida",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -4107,9 +3581,7 @@
   "pk": 608,
   "fields": {
     "name": "Penza",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -4117,9 +3589,7 @@
   "pk": 609,
   "fields": {
     "name": "Peoria, Arizona",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -4127,9 +3597,7 @@
   "pk": 610,
   "fields": {
     "name": "Peoria, Illinois",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -4137,9 +3605,7 @@
   "pk": 611,
   "fields": {
     "name": "Pereira",
-    "country": "Colombia",
-    "mayor_email": "",
-    "date": null
+    "country": "Colombia"
   }
 },
 {
@@ -4147,9 +3613,7 @@
   "pk": 612,
   "fields": {
     "name": "Perez Zeledon",
-    "country": "Costa Rica",
-    "mayor_email": "",
-    "date": null
+    "country": "Costa Rica"
   }
 },
 {
@@ -4157,9 +3621,7 @@
   "pk": 613,
   "fields": {
     "name": "Peristeri",
-    "country": "Greece",
-    "mayor_email": "",
-    "date": null
+    "country": "Greece"
   }
 },
 {
@@ -4167,9 +3629,7 @@
   "pk": 614,
   "fields": {
     "name": "Perm",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -4177,9 +3637,7 @@
   "pk": 615,
   "fields": {
     "name": "Perpignan",
-    "country": "France",
-    "mayor_email": "",
-    "date": null
+    "country": "France"
   }
 },
 {
@@ -4187,9 +3645,7 @@
   "pk": 616,
   "fields": {
     "name": "Perth",
-    "country": "Australia",
-    "mayor_email": "",
-    "date": null
+    "country": "Australia"
   }
 },
 {
@@ -4197,9 +3653,7 @@
   "pk": 617,
   "fields": {
     "name": "Perugia",
-    "country": "Italy",
-    "mayor_email": "",
-    "date": null
+    "country": "Italy"
   }
 },
 {
@@ -4207,9 +3661,7 @@
   "pk": 618,
   "fields": {
     "name": "Pervouralsk",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -4217,9 +3669,7 @@
   "pk": 619,
   "fields": {
     "name": "Pescara",
-    "country": "Italy",
-    "mayor_email": "",
-    "date": null
+    "country": "Italy"
   }
 },
 {
@@ -4227,9 +3677,7 @@
   "pk": 620,
   "fields": {
     "name": "Peshawar",
-    "country": "Pakistan",
-    "mayor_email": "",
-    "date": null
+    "country": "Pakistan"
   }
 },
 {
@@ -4237,9 +3685,7 @@
   "pk": 621,
   "fields": {
     "name": "Petah Tikva",
-    "country": "Israel",
-    "mayor_email": "",
-    "date": null
+    "country": "Israel"
   }
 },
 {
@@ -4247,9 +3693,7 @@
   "pk": 622,
   "fields": {
     "name": "Petaling Jaya",
-    "country": "Malaysia",
-    "mayor_email": "",
-    "date": null
+    "country": "Malaysia"
   }
 },
 {
@@ -4257,9 +3701,7 @@
   "pk": 623,
   "fields": {
     "name": "Petare",
-    "country": "Venezuela",
-    "mayor_email": "",
-    "date": null
+    "country": "Venezuela"
   }
 },
 {
@@ -4267,9 +3709,7 @@
   "pk": 624,
   "fields": {
     "name": "Peterborough",
-    "country": "United Kingdom",
-    "mayor_email": "",
-    "date": null
+    "country": "United Kingdom"
   }
 },
 {
@@ -4277,9 +3717,7 @@
   "pk": 625,
   "fields": {
     "name": "Petrolina",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -4287,9 +3725,7 @@
   "pk": 626,
   "fields": {
     "name": "Petropavl",
-    "country": "Kazakhstan",
-    "mayor_email": "",
-    "date": null
+    "country": "Kazakhstan"
   }
 },
 {
@@ -4297,9 +3733,7 @@
   "pk": 627,
   "fields": {
     "name": "Petropavlovsk-Kamchatsky",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -4307,9 +3741,7 @@
   "pk": 628,
   "fields": {
     "name": "Petrópolis",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -4317,9 +3749,7 @@
   "pk": 629,
   "fields": {
     "name": "Petrozavodsk",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -4327,9 +3757,7 @@
   "pk": 630,
   "fields": {
     "name": "Pforzheim",
-    "country": "Germany",
-    "mayor_email": "",
-    "date": null
+    "country": "Germany"
   }
 },
 {
@@ -4337,9 +3765,7 @@
   "pk": 631,
   "fields": {
     "name": "Philadelphia, Pennsylvania",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -4347,9 +3773,7 @@
   "pk": 632,
   "fields": {
     "name": "Phnom Penh",
-    "country": "Cambodia",
-    "mayor_email": "",
-    "date": null
+    "country": "Cambodia"
   }
 },
 {
@@ -4357,9 +3781,7 @@
   "pk": 633,
   "fields": {
     "name": "Phoenix, Arizona",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -4367,9 +3789,7 @@
   "pk": 634,
   "fields": {
     "name": "Phyongsong",
-    "country": "North Korea",
-    "mayor_email": "",
-    "date": null
+    "country": "North Korea"
   }
 },
 {
@@ -4377,9 +3797,7 @@
   "pk": 635,
   "fields": {
     "name": "Piacenza",
-    "country": "Italy",
-    "mayor_email": "",
-    "date": null
+    "country": "Italy"
   }
 },
 {
@@ -4387,9 +3805,7 @@
   "pk": 636,
   "fields": {
     "name": "Piedecuesta",
-    "country": "Colombia",
-    "mayor_email": "",
-    "date": null
+    "country": "Colombia"
   }
 },
 {
@@ -4397,9 +3813,7 @@
   "pk": 637,
   "fields": {
     "name": "Piedras Negras",
-    "country": "Mexico",
-    "mayor_email": "",
-    "date": null
+    "country": "Mexico"
   }
 },
 {
@@ -4407,9 +3821,7 @@
   "pk": 638,
   "fields": {
     "name": "Pietermaritzburg",
-    "country": "South Africa",
-    "mayor_email": "",
-    "date": null
+    "country": "South Africa"
   }
 },
 {
@@ -4417,9 +3829,7 @@
   "pk": 639,
   "fields": {
     "name": "Pikine",
-    "country": "Senegal",
-    "mayor_email": "",
-    "date": null
+    "country": "Senegal"
   }
 },
 {
@@ -4427,9 +3837,7 @@
   "pk": 640,
   "fields": {
     "name": "Pikit, Cotabato",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -4437,9 +3845,7 @@
   "pk": 641,
   "fields": {
     "name": "Pilibhit",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -4447,9 +3853,7 @@
   "pk": 642,
   "fields": {
     "name": "Pimpri-Chinchwad",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -4457,9 +3861,7 @@
   "pk": 643,
   "fields": {
     "name": "Pinar del Río",
-    "country": "Cuba",
-    "mayor_email": "",
-    "date": null
+    "country": "Cuba"
   }
 },
 {
@@ -4467,9 +3869,7 @@
   "pk": 644,
   "fields": {
     "name": "Pindamonhangaba",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -4477,9 +3877,7 @@
   "pk": 645,
   "fields": {
     "name": "Pingdingshan",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -4487,9 +3885,7 @@
   "pk": 646,
   "fields": {
     "name": "Pingdu",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -4497,9 +3893,7 @@
   "pk": 647,
   "fields": {
     "name": "Pingliang",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -4507,9 +3901,7 @@
   "pk": 648,
   "fields": {
     "name": "Pingxiang",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -4517,9 +3909,7 @@
   "pk": 649,
   "fields": {
     "name": "Pinhais",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -4527,9 +3917,7 @@
   "pk": 650,
   "fields": {
     "name": "Pinsk",
-    "country": "Belarus",
-    "mayor_email": "",
-    "date": null
+    "country": "Belarus"
   }
 },
 {
@@ -4537,9 +3925,7 @@
   "pk": 651,
   "fields": {
     "name": "Pir Mahal",
-    "country": "Pakistan",
-    "mayor_email": "",
-    "date": null
+    "country": "Pakistan"
   }
 },
 {
@@ -4547,9 +3933,7 @@
   "pk": 652,
   "fields": {
     "name": "Piracicaba",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -4557,9 +3941,7 @@
   "pk": 653,
   "fields": {
     "name": "Piraeus",
-    "country": "Greece",
-    "mayor_email": "",
-    "date": null
+    "country": "Greece"
   }
 },
 {
@@ -4567,9 +3949,7 @@
   "pk": 654,
   "fields": {
     "name": "Pisco",
-    "country": "Peru",
-    "mayor_email": "",
-    "date": null
+    "country": "Peru"
   }
 },
 {
@@ -4577,9 +3957,7 @@
   "pk": 655,
   "fields": {
     "name": "Pitalito",
-    "country": "Colombia",
-    "mayor_email": "",
-    "date": null
+    "country": "Colombia"
   }
 },
 {
@@ -4587,9 +3965,7 @@
   "pk": 656,
   "fields": {
     "name": "Piteşti",
-    "country": "Romania",
-    "mayor_email": "",
-    "date": null
+    "country": "Romania"
   }
 },
 {
@@ -4597,9 +3973,7 @@
   "pk": 657,
   "fields": {
     "name": "Pithampur",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -4607,9 +3981,7 @@
   "pk": 658,
   "fields": {
     "name": "Pittsburgh, Pennsylvania",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -4617,9 +3989,7 @@
   "pk": 659,
   "fields": {
     "name": "Piura",
-    "country": "Peru",
-    "mayor_email": "",
-    "date": null
+    "country": "Peru"
   }
 },
 {
@@ -4627,9 +3997,7 @@
   "pk": 660,
   "fields": {
     "name": "Plano, Texas",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -4637,9 +4005,7 @@
   "pk": 661,
   "fields": {
     "name": "Plaridel, Bulacan",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -4647,9 +4013,7 @@
   "pk": 662,
   "fields": {
     "name": "Playa del Carmen",
-    "country": "Mexico",
-    "mayor_email": "",
-    "date": null
+    "country": "Mexico"
   }
 },
 {
@@ -4657,9 +4021,7 @@
   "pk": 663,
   "fields": {
     "name": "Pleven",
-    "country": "Bulgaria",
-    "mayor_email": "",
-    "date": null
+    "country": "Bulgaria"
   }
 },
 {
@@ -4667,9 +4029,7 @@
   "pk": 664,
   "fields": {
     "name": "Płock",
-    "country": "Poland",
-    "mayor_email": "",
-    "date": null
+    "country": "Poland"
   }
 },
 {
@@ -4677,9 +4037,7 @@
   "pk": 665,
   "fields": {
     "name": "Ploieşti",
-    "country": "Romania",
-    "mayor_email": "",
-    "date": null
+    "country": "Romania"
   }
 },
 {
@@ -4687,9 +4045,7 @@
   "pk": 666,
   "fields": {
     "name": "Plovdiv",
-    "country": "Bulgaria",
-    "mayor_email": "",
-    "date": null
+    "country": "Bulgaria"
   }
 },
 {
@@ -4697,9 +4053,7 @@
   "pk": 667,
   "fields": {
     "name": "Plymouth",
-    "country": "United Kingdom",
-    "mayor_email": "",
-    "date": null
+    "country": "United Kingdom"
   }
 },
 {
@@ -4707,9 +4061,7 @@
   "pk": 668,
   "fields": {
     "name": "Plzeň",
-    "country": "Czech Republic",
-    "mayor_email": "",
-    "date": null
+    "country": "Czech Republic"
   }
 },
 {
@@ -4717,9 +4069,7 @@
   "pk": 669,
   "fields": {
     "name": "Poá",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -4727,9 +4077,7 @@
   "pk": 670,
   "fields": {
     "name": "Pococí",
-    "country": "Costa Rica",
-    "mayor_email": "",
-    "date": null
+    "country": "Costa Rica"
   }
 },
 {
@@ -4737,9 +4085,7 @@
   "pk": 671,
   "fields": {
     "name": "Poços de Caldas",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -4747,9 +4093,7 @@
   "pk": 672,
   "fields": {
     "name": "Podgorica",
-    "country": "Montenegro",
-    "mayor_email": "",
-    "date": null
+    "country": "Montenegro"
   }
 },
 {
@@ -4757,9 +4101,7 @@
   "pk": 673,
   "fields": {
     "name": "Podolsk",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -4767,9 +4109,7 @@
   "pk": 674,
   "fields": {
     "name": "Pohang",
-    "country": "South Korea",
-    "mayor_email": "",
-    "date": null
+    "country": "South Korea"
   }
 },
 {
@@ -4777,9 +4117,7 @@
   "pk": 675,
   "fields": {
     "name": "Pointe-Noire",
-    "country": "Republic of the Congo",
-    "mayor_email": "",
-    "date": null
+    "country": "Republic of the Congo"
   }
 },
 {
@@ -4787,9 +4125,7 @@
   "pk": 676,
   "fields": {
     "name": "Pokhara",
-    "country": "Nepal",
-    "mayor_email": "",
-    "date": null
+    "country": "Nepal"
   }
 },
 {
@@ -4797,9 +4133,7 @@
   "pk": 677,
   "fields": {
     "name": "Polomolok, South Cotabato",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -4807,9 +4141,7 @@
   "pk": 678,
   "fields": {
     "name": "Poltava",
-    "country": "Ukraine",
-    "mayor_email": "",
-    "date": null
+    "country": "Ukraine"
   }
 },
 {
@@ -4817,9 +4149,7 @@
   "pk": 679,
   "fields": {
     "name": "Pomona, California",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -4827,9 +4157,7 @@
   "pk": 680,
   "fields": {
     "name": "Ponce",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -4837,9 +4165,7 @@
   "pk": 681,
   "fields": {
     "name": "Pondicherry",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -4847,9 +4173,7 @@
   "pk": 682,
   "fields": {
     "name": "Ponta Grossa",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -4857,9 +4181,7 @@
   "pk": 683,
   "fields": {
     "name": "Pontianak",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -4867,9 +4189,7 @@
   "pk": 684,
   "fields": {
     "name": "Poole",
-    "country": "United Kingdom",
-    "mayor_email": "",
-    "date": null
+    "country": "United Kingdom"
   }
 },
 {
@@ -4877,9 +4197,7 @@
   "pk": 685,
   "fields": {
     "name": "Popayán",
-    "country": "Colombia",
-    "mayor_email": "",
-    "date": null
+    "country": "Colombia"
   }
 },
 {
@@ -4887,9 +4205,7 @@
   "pk": 686,
   "fields": {
     "name": "Porac, Pampanga",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -4897,9 +4213,7 @@
   "pk": 687,
   "fields": {
     "name": "Porbandar",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -4907,9 +4221,7 @@
   "pk": 688,
   "fields": {
     "name": "Port Blair",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -4917,9 +4229,7 @@
   "pk": 689,
   "fields": {
     "name": "Port Elizabeth",
-    "country": "South Africa",
-    "mayor_email": "",
-    "date": null
+    "country": "South Africa"
   }
 },
 {
@@ -4927,9 +4237,7 @@
   "pk": 690,
   "fields": {
     "name": "Port Harcourt",
-    "country": "Nigeria",
-    "mayor_email": "",
-    "date": null
+    "country": "Nigeria"
   }
 },
 {
@@ -4937,9 +4245,7 @@
   "pk": 691,
   "fields": {
     "name": "Port Louis",
-    "country": "Mauritius",
-    "mayor_email": "",
-    "date": null
+    "country": "Mauritius"
   }
 },
 {
@@ -4947,9 +4253,7 @@
   "pk": 692,
   "fields": {
     "name": "Port Moresby",
-    "country": "Papua New Guinea",
-    "mayor_email": "",
-    "date": null
+    "country": "Papua New Guinea"
   }
 },
 {
@@ -4957,9 +4261,7 @@
   "pk": 693,
   "fields": {
     "name": "Port Said",
-    "country": "Egypt",
-    "mayor_email": "",
-    "date": null
+    "country": "Egypt"
   }
 },
 {
@@ -4967,9 +4269,7 @@
   "pk": 694,
   "fields": {
     "name": "Port St. Lucie, Florida",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -4977,9 +4277,7 @@
   "pk": 695,
   "fields": {
     "name": "Port Sudan",
-    "country": "Sudan",
-    "mayor_email": "",
-    "date": null
+    "country": "Sudan"
   }
 },
 {
@@ -4987,9 +4285,7 @@
   "pk": 696,
   "fields": {
     "name": "Port-au-Prince",
-    "country": "Haiti",
-    "mayor_email": "",
-    "date": null
+    "country": "Haiti"
   }
 },
 {
@@ -4997,9 +4293,7 @@
   "pk": 697,
   "fields": {
     "name": "Port-Gentil",
-    "country": "Gabon",
-    "mayor_email": "",
-    "date": null
+    "country": "Gabon"
   }
 },
 {
@@ -5007,9 +4301,7 @@
   "pk": 698,
   "fields": {
     "name": "Portland, Oregon",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -5017,9 +4309,7 @@
   "pk": 699,
   "fields": {
     "name": "Portmore",
-    "country": "Jamaica",
-    "mayor_email": "",
-    "date": null
+    "country": "Jamaica"
   }
 },
 {
@@ -5027,9 +4317,7 @@
   "pk": 700,
   "fields": {
     "name": "Porto Alegre",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -5037,9 +4325,7 @@
   "pk": 701,
   "fields": {
     "name": "Porto Novo",
-    "country": "Benin",
-    "mayor_email": "",
-    "date": null
+    "country": "Benin"
   }
 },
 {
@@ -5047,9 +4333,7 @@
   "pk": 702,
   "fields": {
     "name": "Porto Seguro",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -5057,9 +4341,7 @@
   "pk": 703,
   "fields": {
     "name": "Porto Velho",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -5067,9 +4349,7 @@
   "pk": 704,
   "fields": {
     "name": "Porto",
-    "country": "Portugal",
-    "mayor_email": "",
-    "date": null
+    "country": "Portugal"
   }
 },
 {
@@ -5077,9 +4357,7 @@
   "pk": 705,
   "fields": {
     "name": "Portoviejo",
-    "country": "Ecuador",
-    "mayor_email": "",
-    "date": null
+    "country": "Ecuador"
   }
 },
 {
@@ -5087,9 +4365,7 @@
   "pk": 706,
   "fields": {
     "name": "Portsmouth",
-    "country": "United Kingdom",
-    "mayor_email": "",
-    "date": null
+    "country": "United Kingdom"
   }
 },
 {
@@ -5097,9 +4373,7 @@
   "pk": 707,
   "fields": {
     "name": "Posadas",
-    "country": "Argentina",
-    "mayor_email": "",
-    "date": null
+    "country": "Argentina"
   }
 },
 {
@@ -5107,9 +4381,7 @@
   "pk": 708,
   "fields": {
     "name": "Potosí",
-    "country": "Bolivia",
-    "mayor_email": "",
-    "date": null
+    "country": "Bolivia"
   }
 },
 {
@@ -5117,9 +4389,7 @@
   "pk": 709,
   "fields": {
     "name": "Potsdam",
-    "country": "Germany",
-    "mayor_email": "",
-    "date": null
+    "country": "Germany"
   }
 },
 {
@@ -5127,9 +4397,7 @@
   "pk": 710,
   "fields": {
     "name": "Pouso Alegre",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -5137,9 +4405,7 @@
   "pk": 711,
   "fields": {
     "name": "Poza Rica de Hidalgo",
-    "country": "Mexico",
-    "mayor_email": "",
-    "date": null
+    "country": "Mexico"
   }
 },
 {
@@ -5147,9 +4413,7 @@
   "pk": 712,
   "fields": {
     "name": "Poznań",
-    "country": "Poland",
-    "mayor_email": "",
-    "date": null
+    "country": "Poland"
   }
 },
 {
@@ -5157,9 +4421,7 @@
   "pk": 713,
   "fields": {
     "name": "Pozuelos [es]",
-    "country": "Venezuela",
-    "mayor_email": "",
-    "date": null
+    "country": "Venezuela"
   }
 },
 {
@@ -5167,9 +4429,7 @@
   "pk": 714,
   "fields": {
     "name": "Prague",
-    "country": "Czech Republic",
-    "mayor_email": "",
-    "date": null
+    "country": "Czech Republic"
   }
 },
 {
@@ -5177,9 +4437,7 @@
   "pk": 715,
   "fields": {
     "name": "Praia Grande",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -5187,9 +4445,7 @@
   "pk": 716,
   "fields": {
     "name": "Praia",
-    "country": "Cape Verde",
-    "mayor_email": "",
-    "date": null
+    "country": "Cape Verde"
   }
 },
 {
@@ -5197,9 +4453,7 @@
   "pk": 717,
   "fields": {
     "name": "Prato",
-    "country": "Italy",
-    "mayor_email": "",
-    "date": null
+    "country": "Italy"
   }
 },
 {
@@ -5207,9 +4461,7 @@
   "pk": 718,
   "fields": {
     "name": "Presidente Prudente",
-    "country": "Brazil",
-    "mayor_email": "",
-    "date": null
+    "country": "Brazil"
   }
 },
 {
@@ -5217,9 +4469,7 @@
   "pk": 719,
   "fields": {
     "name": "Preston",
-    "country": "United Kingdom",
-    "mayor_email": "",
-    "date": null
+    "country": "United Kingdom"
   }
 },
 {
@@ -5227,9 +4477,7 @@
   "pk": 720,
   "fields": {
     "name": "Pretoria",
-    "country": "South Africa",
-    "mayor_email": "",
-    "date": null
+    "country": "South Africa"
   }
 },
 {
@@ -5237,9 +4485,7 @@
   "pk": 721,
   "fields": {
     "name": "Pristina",
-    "country": "Kosovo",
-    "mayor_email": "",
-    "date": null
+    "country": "Kosovo"
   }
 },
 {
@@ -5247,9 +4493,7 @@
   "pk": 722,
   "fields": {
     "name": "Probolinggo",
-    "country": "Indonesia",
-    "mayor_email": "",
-    "date": null
+    "country": "Indonesia"
   }
 },
 {
@@ -5257,9 +4501,7 @@
   "pk": 723,
   "fields": {
     "name": "Proddatur",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -5267,9 +4509,7 @@
   "pk": 724,
   "fields": {
     "name": "Prokopyevsk",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -5277,9 +4517,7 @@
   "pk": 725,
   "fields": {
     "name": "Providence, Rhode Island",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -5287,9 +4525,7 @@
   "pk": 726,
   "fields": {
     "name": "Provo, Utah",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -5297,9 +4533,7 @@
   "pk": 727,
   "fields": {
     "name": "Pskov",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": "2019-08-14T13:20:24Z"
+    "country": "Russia"
   }
 },
 {
@@ -5307,9 +4541,7 @@
   "pk": 728,
   "fields": {
     "name": "Pucallpa",
-    "country": "Peru",
-    "mayor_email": "",
-    "date": null
+    "country": "Peru"
   }
 },
 {
@@ -5317,9 +4549,7 @@
   "pk": 729,
   "fields": {
     "name": "Puducherry",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -5327,9 +4557,7 @@
   "pk": 730,
   "fields": {
     "name": "Pudukkottai",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -5337,9 +4565,7 @@
   "pk": 731,
   "fields": {
     "name": "Puebla de Zaragoza",
-    "country": "Mexico",
-    "mayor_email": "",
-    "date": null
+    "country": "Mexico"
   }
 },
 {
@@ -5347,9 +4573,7 @@
   "pk": 732,
   "fields": {
     "name": "Pueblo, Colorado",
-    "country": "United States",
-    "mayor_email": "",
-    "date": null
+    "country": "United States"
   }
 },
 {
@@ -5357,9 +4581,7 @@
   "pk": 733,
   "fields": {
     "name": "Puente Alto",
-    "country": "Chile",
-    "mayor_email": "",
-    "date": null
+    "country": "Chile"
   }
 },
 {
@@ -5367,9 +4589,7 @@
   "pk": 734,
   "fields": {
     "name": "Puerto Cabello",
-    "country": "Venezuela",
-    "mayor_email": "",
-    "date": null
+    "country": "Venezuela"
   }
 },
 {
@@ -5377,9 +4597,7 @@
   "pk": 735,
   "fields": {
     "name": "Puerto Cortés",
-    "country": "Honduras",
-    "mayor_email": "",
-    "date": null
+    "country": "Honduras"
   }
 },
 {
@@ -5387,9 +4605,7 @@
   "pk": 736,
   "fields": {
     "name": "Puerto Montt",
-    "country": "Chile",
-    "mayor_email": "",
-    "date": null
+    "country": "Chile"
   }
 },
 {
@@ -5397,9 +4613,7 @@
   "pk": 737,
   "fields": {
     "name": "Puerto Plata",
-    "country": "Dominican Republic",
-    "mayor_email": "",
-    "date": null
+    "country": "Dominican Republic"
   }
 },
 {
@@ -5407,9 +4621,7 @@
   "pk": 738,
   "fields": {
     "name": "Puerto Princesa City",
-    "country": "Philippines",
-    "mayor_email": "",
-    "date": null
+    "country": "Philippines"
   }
 },
 {
@@ -5417,9 +4629,7 @@
   "pk": 739,
   "fields": {
     "name": "Puerto Vallarta",
-    "country": "Mexico",
-    "mayor_email": "",
-    "date": null
+    "country": "Mexico"
   }
 },
 {
@@ -5427,9 +4637,7 @@
   "pk": 740,
   "fields": {
     "name": "Pune",
-    "country": "India",
-    "mayor_email": "mayor@mail.com",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -5437,9 +4645,7 @@
   "pk": 741,
   "fields": {
     "name": "Puno",
-    "country": "Peru",
-    "mayor_email": "",
-    "date": null
+    "country": "Peru"
   }
 },
 {
@@ -5447,9 +4653,7 @@
   "pk": 742,
   "fields": {
     "name": "Punta Arenas",
-    "country": "Chile",
-    "mayor_email": "",
-    "date": null
+    "country": "Chile"
   }
 },
 {
@@ -5457,9 +4661,7 @@
   "pk": 743,
   "fields": {
     "name": "Punto Fijo",
-    "country": "Venezuela",
-    "mayor_email": "",
-    "date": null
+    "country": "Venezuela"
   }
 },
 {
@@ -5467,9 +4669,7 @@
   "pk": 744,
   "fields": {
     "name": "Puri",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -5477,9 +4677,7 @@
   "pk": 745,
   "fields": {
     "name": "Purnia",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -5487,9 +4685,7 @@
   "pk": 746,
   "fields": {
     "name": "Purulia",
-    "country": "India",
-    "mayor_email": "",
-    "date": null
+    "country": "India"
   }
 },
 {
@@ -5497,9 +4693,7 @@
   "pk": 747,
   "fields": {
     "name": "Pushkino",
-    "country": "Russia",
-    "mayor_email": "dont_disturb@mail.com",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -5507,9 +4701,7 @@
   "pk": 748,
   "fields": {
     "name": "Putian",
-    "country": "China",
-    "mayor_email": "",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -5517,9 +4709,7 @@
   "pk": 749,
   "fields": {
     "name": "Puyang",
-    "country": "China",
-    "mayor_email": "puyang@gmail.com",
-    "date": null
+    "country": "China"
   }
 },
 {
@@ -5527,9 +4717,7 @@
   "pk": 750,
   "fields": {
     "name": "Pyatigorsk",
-    "country": "Russia",
-    "mayor_email": "",
-    "date": null
+    "country": "Russia"
   }
 },
 {
@@ -5537,9 +4725,7 @@
   "pk": 751,
   "fields": {
     "name": "Pyongyang",
-    "country": "North Korea",
-    "mayor_email": "",
-    "date": "2019-08-14T13:21:37Z"
+    "country": "North Korea"
   }
 },
 {

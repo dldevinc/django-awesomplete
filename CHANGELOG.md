@@ -1,5 +1,8 @@
 # Change Log
 
+## [0.2.1](https://github.com/dldevinc/django-awesomplete/tree/v0.2.1) - 2020-10-23
+- Added `AwesompleteTagsWidgetWrapper`
+
 ## [0.2.0](https://github.com/dldevinc/django-awesomplete/tree/v0.2.0) - 2020-10-20
 - `AwesompleteWidget` is now deprecated.
 - Added `AwesompleteWidgetWrapper` that can turn any widget to Awesomplete.

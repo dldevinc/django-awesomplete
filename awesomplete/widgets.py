@@ -123,6 +123,7 @@ class AwesompleteWidgetWrapper(widgets.Widget):
     """
     This class is a wrapper to a given widget to add suggestions.
     """
+    css_class = 'admin-awesomplete'
     template_name = 'awesomplete/widget_wrapper.html'
 
     def __init__(
@@ -205,7 +206,7 @@ class AwesompleteWidgetWrapper(widgets.Widget):
         attrs = self.build_attrs(self.attrs, attrs)
 
         # add CSS-class
-        attrs['class'] = attrs.get('class', '') + ' admin-awesomplete'
+        attrs['class'] = attrs.get('class', '') + ' ' + self.css_class
 
         # set list ID
         list_id = self.get_list_id(name, attrs)
@@ -232,3 +233,7 @@ class AwesompleteWidgetWrapper(widgets.Widget):
 
     def id_for_label(self, id_):
         return self.widget.id_for_label(id_)
+
+
+class AwesompleteTagsWidgetWrapper(AwesompleteWidgetWrapper):
+    css_class = 'admin-awesomplete-tags'
