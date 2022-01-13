@@ -8,16 +8,21 @@
 }
 
 .awesomplete {
+    display: inline-block;
     position: relative;
+}
+
+.awesomplete > input {
+    display: block;
 }
 
 .awesomplete > ul {
     position: absolute;
-    padding: 0 !important;  /* override django styles */
+    padding: 0 !important; /* override django styles */
     margin: 0;
     left: 0;
     z-index: 1;
-    min-width: 180px;
+    min-width: 100%;
     list-style: none;
     background: #fff;
     box-sizing: border-box;
@@ -30,8 +35,7 @@
 .awesomplete > ul {
     border-radius: .3em;
     margin: .2em 0 0;
-    background: hsla(0, 0%, 100%, .9);
-    background: linear-gradient(to bottom right, white, hsla(0, 0%, 100%, .8));
+    background: #fff;
     border: 1px solid rgba(0, 0, 0, .3);
     box-shadow: .05em .2em .6em rgba(0, 0, 0, .2);
     text-shadow: none;

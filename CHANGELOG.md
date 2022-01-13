@@ -2,6 +2,7 @@
 
 ## [0.3.0](https://github.com/dldevinc/django-awesomplete/tree/v0.3.0) - 2022-01-13
 - Drop support for Python 3.4
+- Update awesomplete up to v1.1.5
 
 ## [0.2.1](https://github.com/dldevinc/django-awesomplete/tree/v0.2.1) - 2020-10-23
 - Added `AwesompleteTagsWidgetWrapper`
