@@ -5,7 +5,7 @@ A django app that provides suggestions while you type into the field.
 [![Build Status](https://travis-ci.org/dldevinc/django-awesomplete.svg?branch=master)](https://travis-ci.org/dldevinc/django-awesomplete)
 
 ## Requirements
-+ Python 3.4+
++ Python 3.5+
 + Django 1.11+
 
 ## Installation
@@ -27,7 +27,7 @@ INSTALLED_APPS = (
 
 ## Quickstart
 
-Lets assume we are making a cities app in django and our `models.py` is:
+Let's assume we are making a cities app in django and our `models.py` is:
 ```python
 from django.db import models
 
