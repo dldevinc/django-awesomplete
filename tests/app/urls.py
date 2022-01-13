@@ -1,4 +1,5 @@
 import django
+
 from .views import IndexView
 
 if django.VERSION >= (2, 0):

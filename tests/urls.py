@@ -2,9 +2,10 @@ import django
 from django.contrib import admin
 
 if django.VERSION >= (2, 0):
-    from django.urls import re_path, include
+    from django.urls import include, re_path
 else:
-    from django.conf.urls import url as re_path, include
+    from django.conf.urls import include
+    from django.conf.urls import url as re_path
 
 
 urlpatterns = [

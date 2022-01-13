@@ -2,9 +2,11 @@ from django import forms
 from django.conf import settings
 from django.contrib import admin
 from django.utils.timezone import now, timedelta
-from awesomplete.widgets import AwesompleteWidgetWrapper, AwesompleteTagsWidgetWrapper
-from taggit.models import Tag
 from taggit.forms import TagWidget
+from taggit.models import Tag
+
+from awesomplete.widgets import AwesompleteTagsWidgetWrapper, AwesompleteWidgetWrapper
+
 from .models import City, CityLanguage, Person
 
 
