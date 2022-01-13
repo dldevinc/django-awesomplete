@@ -1,12 +1,16 @@
 from django.conf import settings
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 from taggit.managers import TaggableManager
 
 
 class City(models.Model):
     name = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
+
+    class Meta:
+        verbose_name_plural = _("Cities")
 
     def __str__(self):
         return self.name
