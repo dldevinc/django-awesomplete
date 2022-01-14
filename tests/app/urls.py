@@ -8,7 +8,7 @@ else:
     from django.conf.urls import url as re_path
 
 
-app_name = 'app'
+app_name = "app"
 urlpatterns = [
     re_path(r'', IndexView.as_view()),
 ]

@@ -1,5 +1,5 @@
+import datetime
 from django import forms
-from django.conf import settings
 from django.contrib import admin
 from django.utils.timezone import now, timedelta
 from taggit.forms import TagWidget
@@ -7,88 +7,42 @@ from taggit.models import Tag
 
 from awesomplete.widgets import AwesompleteTagsWidgetWrapper, AwesompleteWidgetWrapper
 
-from .models import City, CityLanguage, Person
+from .models import Article
 
 
-def get_country_suggestions():
-    return City.objects.values_list(
-        'country', flat=True
-    ).order_by('country').distinct()
+def get_author_suggestions():
+    return Article.objects.values_list(
+        "author", flat=True
+    ).order_by("author").distinct()
 
 
 def get_tag_suggestions():
     return Tag.objects.values_list(
-        'name',
+        "name",
         flat=True
-    ).order_by('name').distinct()
+    ).order_by("name").distinct()
 
 
-def get_language_suggestions():
-    return CityLanguage.objects.values_list(
-        'language', flat=True
-    ).order_by('language').distinct()
-
-
-class CityLanguageInlineForm(forms.ModelForm):
-    class Meta:
-        model = CityLanguage
-        fields = forms.ALL_FIELDS
-        widgets = {
-            'language': AwesompleteWidgetWrapper(
-                suggestions=get_language_suggestions
-            )
-        }
-
-
-class CityLanguageInline(admin.TabularInline):
-    model = CityLanguage
-    form = CityLanguageInlineForm
-    extra = 0
-
-
-class CityLanguageStackedInline(admin.StackedInline):
-    model = CityLanguage
-    form = CityLanguageInlineForm
-    extra = 0
-
-
-class CityAdminForm(forms.ModelForm):
-    class Meta:
-        model = City
-        fields = forms.ALL_FIELDS
-        widgets = {
-            'country': AwesompleteWidgetWrapper(
-                suggestions=get_country_suggestions
-            ),
-            'tags': AwesompleteTagsWidgetWrapper(
-                widget=TagWidget,
-                suggestions=get_tag_suggestions
-            )
-        }
-
-
-@admin.register(City)
-class CityAdmin(admin.ModelAdmin):
-    form = CityAdminForm
-    inlines = (CityLanguageInline, CityLanguageStackedInline)
-    list_display = ('name', 'country')
+def next_weekday(weekday=0):
+    """
+    :param weekday: 0 = Monday, 1=Tuesday, 2=Wednesday...
+    """
+    days_ahead = weekday - now().weekday()
+    if days_ahead <= 0:
+        days_ahead += 7
+    return now() + datetime.timedelta(days_ahead)
 
 
 def date_generator():
-    yield now() - timedelta(days=1), 'Yesterday'
-    yield now(), 'Today'
-    yield now() + timedelta(days=1), 'Tomorrow'
+    yield now(), "Now"
+    yield now() + timedelta(days=1), "Tomorrow"
+    yield next_weekday(), "Next monday"
 
 
 def date_formatter(dates):
-    for datetime, label in dates:
+    for date, label in dates:
         yield (
-            datetime.replace(
-                hour=0,
-                minute=0,
-                second=0,
-                microsecond=0
-            ).strftime('%m/%d/%Y %H:%M:%S'),
+            date.date().strftime("%Y-%m-%d"),
             label
         )
 
@@ -99,49 +53,45 @@ def get_date_suggestions():
     """
     for date, label in date_formatter(date_generator()):
         yield {
-            'label': label,
-            'value': date
+            "label": label,
+            "value": date
         }
 
 
-class PersonForm(forms.ModelForm):
-    date = forms.DateTimeField(
+class ArticleAdminForm(forms.ModelForm):
+    publish_at = forms.DateTimeField(
         required=False,
-        label=Person._meta.get_field('date').verbose_name.capitalize(),
-        help_text=Person._meta.get_field('date').help_text,
+        label="Publish at",
         widget=AwesompleteWidgetWrapper(
-            widget=forms.DateTimeInput(attrs={
-                'class': 'some-datetime-class'
-            }),
             suggestions=get_date_suggestions,
             min_chars=0
         )
     )
 
     class Meta:
-        model = Person
+        model = Article
         fields = forms.ALL_FIELDS
         widgets = {
-            'email': AwesompleteWidgetWrapper(
-                widget=forms.EmailInput(attrs={
-                    'class': 'some-email-class'
-                }),
-                min_chars=0,
-                suggestions=(
-                    'user@aol.com',
-                    'user@mail.com',
-                    'user@gmail.com',
-                    'user@yahoo.com',
-                    'user@hotmail.com',
-                ),
+            "author": AwesompleteWidgetWrapper(
+                suggestions=get_author_suggestions,
+                min_chars=0
             ),
-            'language': AwesompleteWidgetWrapper(
-                suggestions=settings.LANGUAGES
-            )
+            "tags": AwesompleteTagsWidgetWrapper(
+                widget=TagWidget,
+                suggestions=get_tag_suggestions
+            ),
         }
 
 
-@admin.register(Person)
-class PersonAdmin(admin.ModelAdmin):
-    form = PersonForm
-    list_display = ('name', 'email')
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    form = ArticleAdminForm
+    fieldsets = [
+        (None, {
+            "fields": ["title"]
+        }),
+        ("Awesomplete", {
+            "fields": ["author", "tags", "publish_at"]
+        }),
+    ]
+    list_display = ("title", "author", "publish_at")
