@@ -54,7 +54,8 @@ def get_country_suggestions():
     Get a suggestions list from existing records.
     """
     return City.objects.values_list(
-        'country', flat=True
+        'country', 
+        flat=True
     ).order_by('country').distinct()
 
 
@@ -128,7 +129,7 @@ class CityAdminForm(forms.ModelForm):
         model = City
         fields = forms.ALL_FIELDS
         widgets = {
-            'email_awesomplete': AwesompleteWidgetWrapper(
+            'email': AwesompleteWidgetWrapper(
                 widget=forms.EmailInput,
                 min_chars=0,
                 suggestions=(
