@@ -1,4 +1,5 @@
 import copy
+from collections.abc import Iterable
 
 from django import forms
 from django.conf import settings
@@ -7,34 +8,23 @@ from django.forms.fields import CallableChoiceIterator
 
 
 def build_suggestions(suggestions):
+    """
+    Returns a list of { label, value } pairs for their subsequent JSON serialization.
+
+    :rtype: list[(str, str)]
+    """
     choices = []
     for suggestion in suggestions:
-        if isinstance(suggestion, (list, tuple)):
+        if isinstance(suggestion, str):
+            choices.append((suggestion, suggestion))
+        elif isinstance(suggestion, dict):
+            choices.append((
+                suggestion.get("label", ""),
+                suggestion.get("value", "")
+            ))
+        elif isinstance(suggestion, Iterable):
             value, label = suggestion[:2]
             choices.append((label, value))
-        elif isinstance(suggestion, str):
-            choices.append((suggestion, suggestion))
-        elif isinstance(suggestion, dict):
-            choices.append((suggestion.get('label', ''), suggestion.get('value', '')))
-        else:
-            raise TypeError(suggestion)
-    return choices
-
-
-def build_compat_suggestions(suggestions):
-    """
-    Obsolete version of "build_suggestions" method.
-    Since v0.2.0 the order of the arguments in lists
-    and tuples has been reversed.
-    """
-    choices = []
-    for suggestion in suggestions:
-        if isinstance(suggestion, (list, tuple)):
-            choices.append(suggestion)
-        elif isinstance(suggestion, str):
-            choices.append((suggestion, suggestion))
-        elif isinstance(suggestion, dict):
-            choices.append((suggestion.get('label', ''), suggestion.get('value', '')))
         else:
             raise TypeError(suggestion)
     return choices
@@ -44,8 +34,8 @@ class AwesompleteWidgetWrapper(widgets.Widget):
     """
     This class is a wrapper to a given widget to add suggestions.
     """
-    css_class = 'admin-awesomplete'
-    template_name = 'awesomplete/widget_wrapper.html'
+    css_class = "admin-awesomplete"
+    template_name = "awesomplete/widget_wrapper.html"
 
     def __init__(
         self,
@@ -96,15 +86,15 @@ class AwesompleteWidgetWrapper(widgets.Widget):
         media = widgets.Media()
         media = media + self.widget.media
 
-        extra = '' if settings.DEBUG else '.min'
+        extra = "" if settings.DEBUG else ".min"
         media = media + forms.Media(
             js=(
-                'awesomplete/js/vendor/awesomplete%s.js' % extra,
-                'awesomplete/js/widget.js',
+                "awesomplete/js/vendor/awesomplete%s.js" % extra,
+                "awesomplete/js/widget.js",
             ),
             css={
-                'screen': (
-                    'awesomplete/css/awesomplete.css',
+                "screen": (
+                    "awesomplete/css/awesomplete.css",
                 ),
             },
         )
@@ -112,33 +102,33 @@ class AwesompleteWidgetWrapper(widgets.Widget):
 
     @staticmethod
     def get_list_id(name, attrs):
-        id_ = attrs.get('list_id')
+        id_ = attrs.get("list_id")
         if id_ is None:
-            id_ = attrs.get('id', name) + '_list'
+            id_ = attrs.get("id", name) + "_list"
         return id_
 
     def get_context(self, name, value, attrs, renderer=None):
         extra_attrs = {
-            'data-minchars': self.min_chars,
-            'data-maxitems': self.max_items,
-            'data-autofirst': self.autofirst,
+            "data-minchars": self.min_chars,
+            "data-maxitems": self.max_items,
+            "data-autofirst": self.autofirst,
         }
         attrs = self.build_attrs(extra_attrs, attrs)
         attrs = self.build_attrs(self.attrs, attrs)
 
         # add CSS-class
-        attrs['class'] = attrs.get('class', '') + ' ' + self.css_class
+        attrs["class"] = attrs.get("class", "") + " " + self.css_class
 
         # set list ID
         list_id = self.get_list_id(name, attrs)
-        attrs['data-list'] = '#%s' % list_id
+        attrs["data-list"] = "#%s" % list_id
 
         context = {
-            'rendered_widget': self.widget.render(name, value, attrs, renderer),
-            'is_hidden': self.is_hidden,
-            'name': name,
-            'list_id': list_id,
-            'suggestions': build_suggestions(self.suggestions)
+            "rendered_widget": self.widget.render(name, value, attrs, renderer),
+            "is_hidden": self.is_hidden,
+            "name": name,
+            "list_id": list_id,
+            "suggestions": build_suggestions(self.suggestions)
         }
         return context
 
@@ -157,4 +147,4 @@ class AwesompleteWidgetWrapper(widgets.Widget):
 
 
 class AwesompleteTagsWidgetWrapper(AwesompleteWidgetWrapper):
-    css_class = 'admin-awesomplete-tags'
+    css_class = "admin-awesomplete-tags"
