@@ -8,17 +8,39 @@
         $root.find('.admin-awesomplete-tags').each(function() {
             initAwesomplete(this, formsetName, {
                 filter: function(text, input) {
-                    var entered = input.split(/\s*,\s*/).filter(Boolean);
-                    return (entered.indexOf(text.value) < 0) && Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
+                    var tagList = parseTags(input);
+
+                    var newTag = tagList.pop() || "";
+                    if (!newTag) {
+                        return (
+                            (tagList.indexOf(text.value) < 0)
+                            && (this.minChars === 0)
+                        );
+                    }
+
+                    return (
+                        (tagList.indexOf(text.value) < 0)  // skip already selected
+                        && Awesomplete.FILTER_CONTAINS(text, newTag)
+                    );
                 },
 
                 item: function(text, input) {
-                    return Awesomplete.ITEM(text, input.match(/[^,]*$/)[0]);
+                    var tagList = parseTags(input);
+                    var newTag = tagList.pop() || "";
+                    return Awesomplete.ITEM(text, newTag);
                 },
 
                 replace: function(text) {
-                    var before = this.input.value.match(/^.+,\s*|/)[0];
-                    this.input.value = before + text + ", ";
+                    var tagList = parseTags(this.input.value);
+                    tagList.pop(); // remove printed tag
+                    tagList.push(text);
+
+                    this.input.value = tagList.map(function(item) {
+                        if ((item.indexOf(",") >= 0) || (item.indexOf(" ") >= 0)) {
+                            return '"' + item + '"';
+                        }
+                        return item
+                    }).join(", ") + ", ";
                 }
             });
         });
@@ -54,7 +76,7 @@
             instance.list = JSON.parse($list.text());
         }
 
-        // when minChars is set to zero, show popup on focus.
+        // show popup on focus when minChars is equal to zero.
         if (instance.minChars === 0) {
             instance.input.addEventListener('focus', function() {
                 if (this.value.length === 0) {
@@ -65,6 +87,31 @@
 
         // fix horizontal position (because of "float:left" on label)
         instance.ul.style.marginLeft = instance.input.offsetLeft + 'px';
+
+        // scroll to the input's end after item selected
+        $input.on("awesomplete-selectcomplete", function() {
+            if (this.scrollWidth > this.clientWidth) {
+                this.scrollLeft = this.scrollWidth;
+            }
+        });
+    }
+
+    /**
+     * Split by comma, respect and preserve double quotes.
+     * Then trim each item: removes double quotes ans spaces.
+     *
+     * @param {String} value
+     * @returns {String[]}
+     */
+    function parseTags(value) {
+        var tags = value.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+        if (!tags) {
+            return [];
+        }
+
+        return tags.map(function(item) {
+            return item.replace(/^"|"$/g, '').trim();
+        })
     }
 
     function getListId(input) {

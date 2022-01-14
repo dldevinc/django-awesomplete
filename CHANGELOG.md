@@ -4,6 +4,7 @@
 - Drop support for Python 3.4
 - Update awesomplete up to v1.1.5
 - The deprecatd `AwesompleteWidget` has been removed.
+- Allow to type a value with double quotes for `AwesompleteTagsWidgetWrapper`.
 
 ## [0.2.1](https://github.com/dldevinc/django-awesomplete/tree/v0.2.1) - 2020-10-23
 - Added `AwesompleteTagsWidgetWrapper`
