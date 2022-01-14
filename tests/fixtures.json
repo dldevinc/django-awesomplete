@@ -1,0 +1,56 @@
+[
+{
+  "model": "app.article",
+  "pk": 1,
+  "fields": {
+    "title": "Sinema Rejects Changing Filibuster, Dealing Biden a Setback",
+    "author": "Carl Hulse",
+    "publish_at": "2022-01-15"
+  }
+},
+{
+  "model": "app.article",
+  "pk": 2,
+  "fields": {
+    "title": "Democrats Plan to Fast-Track Voting Rights Bill, Speeding a Showdown",
+    "author": "Carl Hulse",
+    "publish_at": "2022-01-17"
+  }
+},
+{
+  "model": "app.article",
+  "pk": 3,
+  "fields": {
+    "title": "A Voting Rights Push, as States Make Voting Harder",
+    "author": "Nick Corasaniti",
+    "publish_at": "2022-01-14"
+  }
+},
+{
+  "model": "app.article",
+  "pk": 4,
+  "fields": {
+    "title": "Justice Dept. Files Voting Rights Suit Against Texas Over New Map",
+    "author": "Nick Corasaniti",
+    "publish_at": "2022-01-17"
+  }
+},
+{
+  "model": "app.article",
+  "pk": 5,
+  "fields": {
+    "title": "Voting Battles of 2022 Take Shape as G.O.P. Crafts New Election Bills",
+    "author": "Nick Corasaniti",
+    "publish_at": "2022-01-15"
+  }
+},
+{
+  "model": "app.article",
+  "pk": 6,
+  "fields": {
+    "title": "Kyrsten Sinema and the Politics of a Sleeveless Silhouette",
+    "author": "Tressie McMillan Cottom",
+    "publish_at": "2022-01-17"
+  }
+}
+]
