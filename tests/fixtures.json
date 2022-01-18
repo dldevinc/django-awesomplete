@@ -52,5 +52,105 @@
     "author": "Tressie McMillan Cottom",
     "publish_at": "2022-01-17"
   }
+},
+{
+  "model": "taggit.tag",
+  "pk": 3,
+  "fields": {
+    "name": "Voting rights",
+    "slug": "voting-rights"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 4,
+  "fields": {
+    "name": "Kyrsten Sinema",
+    "slug": "kyrsten-sinema"
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 3,
+  "fields": {
+    "tag": 3,
+    "content_type": [
+      "app",
+      "article"
+    ],
+    "object_id": 2
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 4,
+  "fields": {
+    "tag": 3,
+    "content_type": [
+      "app",
+      "article"
+    ],
+    "object_id": 3
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 5,
+  "fields": {
+    "tag": 4,
+    "content_type": [
+      "app",
+      "article"
+    ],
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 6,
+  "fields": {
+    "tag": 4,
+    "content_type": [
+      "app",
+      "article"
+    ],
+    "object_id": 1
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 7,
+  "fields": {
+    "tag": 3,
+    "content_type": [
+      "app",
+      "article"
+    ],
+    "object_id": 4
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 8,
+  "fields": {
+    "tag": 3,
+    "content_type": [
+      "app",
+      "article"
+    ],
+    "object_id": 5
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 9,
+  "fields": {
+    "tag": 3,
+    "content_type": [
+      "app",
+      "article"
+    ],
+    "object_id": 6
+  }
 }
 ]
