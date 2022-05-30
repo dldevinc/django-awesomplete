@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.4.0](https://github.com/dldevinc/django-awesomplete/tree/v0.4.0) - 2022-05-30
+### ⚠ BREAKING CHANGES
+- Dropped support for Python 3.5.
+
 ## [0.3.0](https://github.com/dldevinc/django-awesomplete/tree/v0.3.0) - 2022-01-13
 - Drop support for Python 3.4
 - Update awesomplete up to v1.1.5
