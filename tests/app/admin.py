@@ -12,7 +12,8 @@ from .models import Article
 
 def get_author_suggestions():
     return Article.objects.values_list(
-        "author", flat=True
+        "author",
+        flat=True
     ).order_by("author").distinct()
 
 
@@ -25,7 +26,7 @@ def get_tag_suggestions():
 
 def next_weekday(weekday=0):
     """
-    :param weekday: 0 = Monday, 1=Tuesday, 2=Wednesday...
+    :param weekday: 0 = Monday, 1=Tuesday, 2=Wednesday, ...
     """
     days_ahead = weekday - now().weekday()
     if days_ahead <= 0:
@@ -34,7 +35,7 @@ def next_weekday(weekday=0):
 
 
 def date_generator():
-    yield now(), "Now"
+    yield now(), "Today"
     yield now() + timedelta(days=1), "Tomorrow"
     yield next_weekday(), "Next monday"
 

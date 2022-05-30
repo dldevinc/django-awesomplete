@@ -6,8 +6,8 @@ A django app that provides suggestions while you type into the field.
 [![Software license](https://img.shields.io/pypi/l/django-awesomplete.svg)](https://pypi.org/project/django-awesomplete/)
 
 ## Requirements
-+ Python 3.5+
-+ Django 1.11+
++ Python >= 3.6
++ Django >= 1.11
 
 ## Installation
 Install the desired version with pip:
