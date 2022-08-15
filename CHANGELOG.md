@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.5.0](https://github.com/dldevinc/django-awesomplete/tree/v0.5.0) - 2022-08-15
+### Features
+- Added support for Django 4.1.
+### Bug Fixes
+- Fixed type check.
+
 ## [0.4.0](https://github.com/dldevinc/django-awesomplete/tree/v0.4.0) - 2022-05-30
 ### ⚠ BREAKING CHANGES
 - Dropped support for Python 3.5.
