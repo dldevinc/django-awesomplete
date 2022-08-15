@@ -1,5 +1,5 @@
 import copy
-from collections.abc import Iterable
+from typing import Sequence
 
 from django import forms
 from django.conf import settings
@@ -22,7 +22,7 @@ def build_suggestions(suggestions):
                 suggestion.get("label", ""),
                 suggestion.get("value", "")
             ))
-        elif isinstance(suggestion, Iterable):
+        elif isinstance(suggestion, Sequence):
             value, label = suggestion[:2]
             choices.append((label, value))
         else:
