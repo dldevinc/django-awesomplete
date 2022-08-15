@@ -34,12 +34,23 @@ class TestBuildSuggestions:
             ("Japanese", "jp"),
         ]
 
-    def test_iterable(self):
+    def test_list(self):
         assert list(build_suggestions([
             ("f00", "Red", "#ff0000"),
             ("0f0", "Green", "#00ff00"),
             ["00f", "Blue", "#0000ff"],
         ])) == [
+            ("Red", "f00"),
+            ("Green", "0f0"),
+            ("Blue", "00f"),
+        ]
+
+    def test_tuple(self):
+        assert list(build_suggestions((
+            ("f00", "Red", "#ff0000"),
+            ("0f0", "Green", "#00ff00"),
+            ["00f", "Blue", "#0000ff"],
+        ))) == [
             ("Red", "f00"),
             ("Green", "0f0"),
             ("Blue", "00f"),
