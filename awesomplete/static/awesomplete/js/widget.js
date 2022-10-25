@@ -1,46 +1,45 @@
-(function($) {
-
+(function ($) {
     function initWidgets($root, formsetName) {
-        $root.find('.admin-awesomplete').each(function() {
+        $root.find(".admin-awesomplete").each(function () {
             initAwesomplete(this, formsetName);
         });
 
-        $root.find('.admin-awesomplete-tags').each(function() {
+        $root.find(".admin-awesomplete-tags").each(function () {
             initAwesomplete(this, formsetName, {
-                filter: function(text, input) {
+                filter: function (text, input) {
                     var tagList = parseTags(input);
 
                     var newTag = tagList.pop() || "";
                     if (!newTag) {
-                        return (
-                            (tagList.indexOf(text.value) < 0)
-                            && (this.minChars === 0)
-                        );
+                        return tagList.indexOf(text.value) < 0 && this.minChars === 0;
                     }
 
                     return (
-                        (tagList.indexOf(text.value) < 0)  // skip already selected
-                        && Awesomplete.FILTER_CONTAINS(text, newTag)
+                        tagList.indexOf(text.value) < 0 && // skip already selected
+                        Awesomplete.FILTER_CONTAINS(text, newTag)
                     );
                 },
 
-                item: function(text, input) {
+                item: function (text, input) {
                     var tagList = parseTags(input);
                     var newTag = tagList.pop() || "";
                     return Awesomplete.ITEM(text, newTag);
                 },
 
-                replace: function(text) {
+                replace: function (text) {
                     var tagList = parseTags(this.input.value);
                     tagList.pop(); // remove printed tag
                     tagList.push(text);
 
-                    this.input.value = tagList.map(function(item) {
-                        if ((item.indexOf(",") >= 0) || (item.indexOf(" ") >= 0)) {
-                            return '"' + item + '"';
-                        }
-                        return item
-                    }).join(", ") + ", ";
+                    this.input.value =
+                        tagList
+                            .map(function (item) {
+                                if (item.indexOf(",") >= 0 || item.indexOf(" ") >= 0) {
+                                    return '"' + item + '"';
+                                }
+                                return item;
+                            })
+                            .join(", ") + ", ";
                 }
             });
         });
@@ -48,14 +47,14 @@
 
     function initAwesomplete(input, formsetName, options) {
         var $input = $(input);
-        if ($input.closest('.empty-form').length) {
-            return
+        if ($input.closest(".empty-form").length) {
+            return;
         }
 
         // Django's "overflow:hidden" fix
-        var $formRow = $input.closest('.form-row');
+        var $formRow = $input.closest(".form-row");
         if ($formRow.length) {
-            $formRow.css('overflow', 'visible');
+            $formRow.css("overflow", "visible");
         }
 
         // Replace "__prefix__" in "list" and "data-list" attributes
@@ -63,33 +62,36 @@
             replaceFormsetPrefix(input, formsetName);
         }
 
-        var awesopleteOptions = $.extend({
-            sort: function() {}
-        }, options);
+        var awesopleteOptions = $.extend(
+            {
+                sort: function () {}
+            },
+            options
+        );
 
         var instance = new Awesomplete(input, awesopleteOptions);
 
         // Load list from JSON
         var listId = getListId(input);
         var $list = listId && $(listId);
-        if ($list && $list.length && ($list.prop('tagName') === 'SCRIPT')) {
+        if ($list && $list.length && $list.prop("tagName") === "SCRIPT") {
             instance.list = JSON.parse($list.text());
         }
 
         // show popup on focus when minChars is equal to zero.
         if (instance.minChars === 0) {
-            instance.input.addEventListener('focus', function() {
+            instance.input.addEventListener("focus", function () {
                 if (this.value.length === 0) {
-                    instance.evaluate()
+                    instance.evaluate();
                 }
             });
         }
 
         // fix horizontal position (because of "float:left" on label)
-        instance.ul.style.marginLeft = instance.input.offsetLeft + 'px';
+        instance.ul.style.marginLeft = instance.input.offsetLeft + "px";
 
         // scroll to the input's end after item selected
-        $input.on("awesomplete-selectcomplete", function() {
+        $input.on("awesomplete-selectcomplete", function () {
             if (this.scrollWidth > this.clientWidth) {
                 this.scrollLeft = this.scrollWidth;
             }
@@ -109,9 +111,9 @@
             return [];
         }
 
-        return tags.map(function(item) {
-            return item.replace(/^"|"$/g, '').trim();
-        })
+        return tags.map(function (item) {
+            return item.replace(/^"|"$/g, "").trim();
+        });
     }
 
     function getListId(input) {
@@ -136,10 +138,11 @@
         }
     }
 
-    $(document).ready(function() {
-        initWidgets($(document.body));
-    }).on('formset:added', function(event, $row, formsetName) {
-        initWidgets($row, formsetName);
-    });
-
+    $(document)
+        .ready(function () {
+            initWidgets($(document.body));
+        })
+        .on("formset:added", function (event, $row, formsetName) {
+            initWidgets($row, formsetName);
+        });
 })(django.jQuery);

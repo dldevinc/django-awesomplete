@@ -1,4 +1,5 @@
 # Django Awesomplete
+
 A django app that provides suggestions while you type into the field.
 
 [![PyPI](https://img.shields.io/pypi/v/django-awesomplete.svg)](https://pypi.org/project/django-awesomplete/)
@@ -6,10 +7,12 @@ A django app that provides suggestions while you type into the field.
 [![Software license](https://img.shields.io/pypi/l/django-awesomplete.svg)](https://pypi.org/project/django-awesomplete/)
 
 ## Requirements
-+ Python >= 3.6
-+ Django >= 1.11
+
+-   Python >= 3.6
+-   Django >= 1.11
 
 ## Installation
+
 Install the desired version with pip:
 
 ```
@@ -29,6 +32,7 @@ INSTALLED_APPS = (
 ## Quickstart
 
 Let's assume we are making a cities app in django and our `models.py` is:
+
 ```python
 from django.db import models
 
@@ -42,6 +46,7 @@ class City(models.Model):
 ```
 
 To use suggestions we need to override widget in `admin.py`:
+
 ```python
 from django import forms
 from django.contrib import admin
@@ -54,7 +59,7 @@ def get_country_suggestions():
     Get a suggestions list from existing records.
     """
     return City.objects.values_list(
-        'country', 
+        'country',
         flat=True
     ).order_by('country').distinct()
 
@@ -80,7 +85,8 @@ Result:
 ![](http://i.imgur.com/NRCdgNu.png)
 
 ## Suggestions
-You can pass either an iterable of strings, 2-tuples, dicts 
+
+You can pass either an iterable of strings, 2-tuples, dicts
 or a callable that returns such an iterable.
 
 ```python
@@ -102,18 +108,19 @@ AwesompleteWidgetWrapper(
     suggestions=(
         {
             'label': 'English',
-            'value': 'en'        
+            'value': 'en'
         },
         {
             'label': 'Spanish',
-            'value': 'es'        
+            'value': 'es'
         }
     )
 )
 ```
 
 ## AwesompleteWidgetWrapper
-Actually, `AwesompleteWidgetWrapper` is a wrapper for a widget. 
+
+Actually, `AwesompleteWidgetWrapper` is a wrapper for a widget.
 When the `widget` is not defined, it defaults to `TextInput`.
 
 You can specify another widget explicitly, e.g. `EmailInput`:
@@ -144,28 +151,29 @@ class CityAdminForm(forms.ModelForm):
 
 You can also pass additional parameters to `AwesompleteWidgetWrapper`:
 
-+ **`min_chars`**
-  <br>
-  Minimum characters the user has to type before the autocomplete 
-  popup shows up.
-  <br>
-  *Default*: `1`
+-   **`min_chars`**
+    <br>
+    Minimum characters the user has to type before the autocomplete
+    popup shows up.
+    <br>
+    _Default_: `1`
 
-+ **`max_items`**
+-   **`max_items`**
     <br>
     Maximum number of suggestions to display.
     <br>
-    *Default*: `10`
+    _Default_: `10`
 
-+ **`autofirst`**
+-   **`autofirst`**
     <br>
     Should the first element be automatically selected?
     <br>
-    *Default*: `True`
+    _Default_: `True`
 
 ## AwesompleteTagsWidgetWrapper
+
 This widget is a subclass of the `AwesompleteWidgetWrapper` and intended to be used
-for entering comma-separated values. 
+for entering comma-separated values.
 
 This widget can be used with [django-taggit](https://github.com/jazzband/django-taggit)
 
@@ -200,7 +208,9 @@ class CityForm(forms.ModelForm):
 ![](https://i.imgur.com/zWAWhN7.png)
 
 ## Links
-+ [awesomplete](http://leaverou.github.io/awesomplete/) created by Lea Verou.
+
+-   [awesomplete](http://leaverou.github.io/awesomplete/) created by Lea Verou.
 
 ## License
+
 Copyright (c) 2018 Mihail Mishakin Released under the BSD license (see LICENSE)
