@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.5.2](https://github.com/dldevinc/django-awesomplete/tree/v0.5.2) - 2023-02-24
+
+### Features
+
+- Add Wagtail compatibility.
+
 ## [0.5.1](https://github.com/dldevinc/django-awesomplete/tree/v0.5.1) - 2023-01-09
 
 ### Features
