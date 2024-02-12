@@ -6,6 +6,7 @@
  */
 
 (function () {
+
     var _ = function (input, o) {
         var me = this;
 
@@ -27,23 +28,18 @@
         // between default and customized behavior later on
         this.options = o = o || {};
 
-        configure(
-            this,
-            {
-                minChars: 2,
-                maxItems: 10,
-                autoFirst: false,
-                data: _.DATA,
-                filter: _.FILTER_CONTAINS,
-                sort: o.sort === false ? false : _.SORT_BYLENGTH,
-                container: _.CONTAINER,
-                item: _.ITEM,
-                replace: _.REPLACE,
-                tabSelect: false,
-                listLabel: "Results List"
-            },
-            o
-        );
+        configure(this, {
+            minChars: 2,
+            maxItems: 10,
+            autoFirst: false,
+            data: _.DATA,
+            filter: _.FILTER_CONTAINS,
+            sort: o.sort === false ? false : _.SORT_BYLENGTH,
+            container: _.CONTAINER,
+            item: _.ITEM,
+            replace: _.REPLACE,
+            tabSelect: false
+        }, o);
 
         this.index = -1;
 
@@ -52,76 +48,71 @@
         this.container = this.container(input);
 
         this.ul = $.create("ul", {
-            "hidden": "hidden",
-            "role": "listbox",
-            "id": "awesomplete_list_" + this.count,
-            "inside": this.container,
-            "aria-label": this.listLabel
+            hidden: "hidden",
+            role: "listbox",
+            id: "awesomplete_list_" + this.count,
+            inside: this.container
         });
 
         this.status = $.create("span", {
-            "className": "visually-hidden",
-            "role": "status",
+            className: "visually-hidden",
+            role: "status",
             "aria-live": "assertive",
             "aria-atomic": true,
-            "inside": this.container,
-            "textContent":
-                this.minChars != 0
-                    ? "Type " + this.minChars + " or more characters for results."
-                    : "Begin typing for results."
+            inside: this.container,
+            textContent: this.minChars != 0 ? ("Type " + this.minChars + " or more characters for results.") : "Begin typing for results."
         });
 
         // Bind events
 
         this._events = {
             input: {
-                input: this.evaluate.bind(this),
-                blur: this.close.bind(this, { reason: "blur" }),
-                keydown: function (evt) {
+                "input": this.evaluate.bind(this),
+                "blur": this.close.bind(this, { reason: "blur" }),
+                "keydown": function(evt) {
                     var c = evt.keyCode;
 
                     // If the dropdown `ul` is in view, then act on keydown for the following keys:
                     // Enter / Esc / Up / Down
-                    if (me.opened) {
-                        if (c === 13 && me.selected) {
-                            // Enter
+                    if(me.opened) {
+                        if (c === 13 && me.selected) { // Enter
                             evt.preventDefault();
                             me.select(undefined, undefined, evt);
-                        } else if (c === 9 && me.selected && me.tabSelect) {
-                            evt.preventDefault();
+                        }
+                        else if (c === 9 && me.selected && me.tabSelect) {
                             me.select(undefined, undefined, evt);
-                        } else if (c === 27) {
-                            // Esc
+                        }
+                        else if (c === 27) { // Esc
                             me.close({ reason: "esc" });
-                        } else if (c === 38 || c === 40) {
-                            // Down/Up arrow
+                        }
+                        else if (c === 38 || c === 40) { // Down/Up arrow
                             evt.preventDefault();
-                            me[c === 38 ? "previous" : "next"]();
+                            me[c === 38? "previous" : "next"]();
                         }
                     }
                 }
             },
             form: {
-                submit: this.close.bind(this, { reason: "submit" })
+                "submit": this.close.bind(this, { reason: "submit" })
             },
             ul: {
                 // Prevent the default mousedowm, which ensures the input is not blurred.
                 // The actual selection will happen on click. This also ensures dragging the
                 // cursor away from the list item will cancel the selection
-                mousedown: function (evt) {
+                "mousedown": function(evt) {
                     evt.preventDefault();
                 },
                 // The click event is fired even if the corresponding mousedown event has called preventDefault
-                click: function (evt) {
+                "click": function(evt) {
                     var li = evt.target;
 
                     if (li !== this) {
+
                         while (li && !/li/i.test(li.nodeName)) {
                             li = li.parentNode;
                         }
 
-                        if (li && evt.button === 0) {
-                            // Only select on left click
+                        if (li && evt.button === 0) {  // Only select on left click
                             evt.preventDefault();
                             me.select(li, evt.target, evt);
                         }
@@ -137,7 +128,8 @@
         if (this.input.hasAttribute("list")) {
             this.list = "#" + this.input.getAttribute("list");
             this.input.removeAttribute("list");
-        } else {
+        }
+        else {
             this.list = this.input.getAttribute("data-list") || o.list || [];
         }
 
@@ -148,10 +140,11 @@
         set list(list) {
             if (Array.isArray(list)) {
                 this._list = list;
-            } else if (typeof list === "string" && list.indexOf(",") > -1) {
+            }
+            else if (typeof list === "string" && list.indexOf(",") > -1) {
                 this._list = list.split(/\s*,\s*/);
-            } else {
-                // Element or CSS selector
+            }
+            else { // Element or CSS selector
                 list = $(list);
 
                 if (list && list.children) {
@@ -212,7 +205,7 @@
             $.fire(this.input, "awesomplete-open");
         },
 
-        destroy: function () {
+        destroy: function() {
             //remove events from the input and its form
             $.unbind(this.input, this._events.input);
             $.unbind(this.input.form, this._events.form);
@@ -240,7 +233,7 @@
 
         next: function () {
             var count = this.ul.children.length;
-            this.goto(this.index < count - 1 ? this.index + 1 : count ? 0 : -1);
+            this.goto(this.index < count - 1 ? this.index + 1 : (count ? 0 : -1) );
         },
 
         previous: function () {
@@ -303,7 +296,7 @@
             }
         },
 
-        evaluate: function () {
+        evaluate: function() {
             var me = this;
             var value = this.input.value;
 
@@ -313,12 +306,12 @@
                 this.ul.innerHTML = "";
 
                 this.suggestions = this._list
-                    .map(function (item) {
-                        return new Suggestion(me.data(item, value));
-                    })
-                    .filter(function (item) {
-                        return me.filter(item, value);
-                    });
+                .map(function(item) {
+                    return new Suggestion(me.data(item, value));
+                })
+                .filter(function(item) {
+                    return me.filter(item, value);
+                });
 
                 if (this.sort !== false) {
                     this.suggestions = this.suggestions.sort(this.sort);
@@ -326,20 +319,23 @@
 
                 this.suggestions = this.suggestions.slice(0, this.maxItems);
 
-                this.suggestions.forEach(function (text, index) {
+                this.suggestions.forEach(function(text, index) {
                     me.ul.appendChild(me.item(text, value, index));
                 });
 
                 if (this.ul.children.length === 0) {
+
                     this.status.textContent = "No results found";
 
                     this.close({ reason: "nomatches" });
+
                 } else {
                     this.open();
 
                     this.status.textContent = this.ul.children.length + " results found";
                 }
-            } else {
+            }
+            else {
                 this.close({ reason: "nomatches" });
 
                 this.status.textContent = "No results found";
@@ -364,7 +360,7 @@
             return a.length - b.length;
         }
 
-        return a < b ? -1 : 1;
+        return a < b? -1 : 1;
     };
 
     _.CONTAINER = function (input) {
@@ -372,13 +368,12 @@
             className: "awesomplete",
             around: input
         });
-    };
+    }
 
     _.ITEM = function (text, input, item_id) {
-        var html =
-            input.trim() === "" ? text : text.replace(RegExp($.regExpEscape(input.trim()), "gi"), "<mark>$&</mark>");
+        var html = input.trim() === "" ? text : text.replace(RegExp($.regExpEscape(input.trim()), "gi"), "<mark>$&</mark>");
         return $.create("li", {
-            "innerHTML": html,
+            innerHTML: html,
             "role": "option",
             "aria-selected": "false",
             "id": "awesomplete_list_" + this.count + "_item_" + item_id
@@ -389,26 +384,20 @@
         this.input.value = text.value;
     };
 
-    _.DATA = function (item /*, input*/) {
-        return item;
-    };
+    _.DATA = function (item/*, input*/) { return item; };
 
     // Private functions
 
     function Suggestion(data) {
         var o = Array.isArray(data)
             ? { label: data[0], value: data[1] }
-            : typeof data === "object" && "label" in data && "value" in data
-            ? data
-            : { label: data, value: data };
+            : typeof data === "object" && "label" in data && "value" in data ? data : { label: data, value: data };
 
         this.label = o.label || o.value;
         this.value = o.value;
     }
-    Object.defineProperty((Suggestion.prototype = Object.create(String.prototype)), "length", {
-        get: function () {
-            return this.label.length;
-        }
+    Object.defineProperty(Suggestion.prototype = Object.create(String.prototype), "length", {
+        get: function() { return this.label.length; }
     });
     Suggestion.prototype.toString = Suggestion.prototype.valueOf = function () {
         return "" + this.label;
@@ -421,17 +410,19 @@
 
             if (typeof initial === "number") {
                 instance[i] = parseInt(attrValue);
-            } else if (initial === false) {
-                // Boolean options must be false by default anyway
+            }
+            else if (initial === false) { // Boolean options must be false by default anyway
                 instance[i] = attrValue !== null;
-            } else if (initial instanceof Function) {
+            }
+            else if (initial instanceof Function) {
                 instance[i] = null;
-            } else {
+            }
+            else {
                 instance[i] = attrValue;
             }
 
             if (!instance[i] && instance[i] !== 0) {
-                instance[i] = i in o ? o[i] : initial;
+                instance[i] = (i in o)? o[i] : initial;
             }
         }
     }
@@ -441,14 +432,14 @@
     var slice = Array.prototype.slice;
 
     function $(expr, con) {
-        return typeof expr === "string" ? (con || document).querySelector(expr) : expr || null;
+        return typeof expr === "string"? (con || document).querySelector(expr) : expr || null;
     }
 
     function $$(expr, con) {
         return slice.call((con || document).querySelectorAll(expr));
     }
 
-    $.create = function (tag, o) {
+    $.create = function(tag, o) {
         var element = document.createElement(tag);
 
         for (var i in o) {
@@ -456,7 +447,8 @@
 
             if (i === "inside") {
                 $(val).appendChild(element);
-            } else if (i === "around") {
+            }
+            else if (i === "around") {
                 var ref = $(val);
                 ref.parentNode.insertBefore(element, ref);
                 element.appendChild(ref);
@@ -464,9 +456,11 @@
                 if (ref.getAttribute("autofocus") != null) {
                     ref.focus();
                 }
-            } else if (i in element) {
+            }
+            else if (i in element) {
                 element[i] = val;
-            } else {
+            }
+            else {
                 element.setAttribute(i, val);
             }
         }
@@ -474,7 +468,7 @@
         return element;
     };
 
-    $.bind = function (element, o) {
+    $.bind = function(element, o) {
         if (element) {
             for (var event in o) {
                 var callback = o[event];
@@ -486,22 +480,22 @@
         }
     };
 
-    $.unbind = function (element, o) {
+    $.unbind = function(element, o) {
         if (element) {
             for (var event in o) {
                 var callback = o[event];
 
-                event.split(/\s+/).forEach(function (event) {
+                event.split(/\s+/).forEach(function(event) {
                     element.removeEventListener(event, callback);
                 });
             }
         }
     };
 
-    $.fire = function (target, type, properties) {
+    $.fire = function(target, type, properties) {
         var evt = document.createEvent("HTMLEvents");
 
-        evt.initEvent(type, true, true);
+        evt.initEvent(type, true, true );
 
         for (var j in properties) {
             evt[j] = properties[j];
@@ -516,7 +510,7 @@
 
     $.siblingIndex = function (el) {
         /* eslint-disable no-cond-assign */
-        for (var i = 0; (el = el.previousElementSibling); i++);
+        for (var i = 0; el = el.previousElementSibling; i++);
         return i;
     };
 
@@ -538,7 +532,8 @@
         // DOM already loaded?
         if (document.readyState !== "loading") {
             init();
-        } else {
+        }
+        else {
             // Wait for it
             document.addEventListener("DOMContentLoaded", init);
         }
@@ -553,4 +548,5 @@
     }
 
     return _;
-})();
+
+}());

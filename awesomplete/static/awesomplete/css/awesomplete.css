@@ -18,14 +18,14 @@
 
 .awesomplete > ul {
   position: absolute;
-  padding: 0 !important; /* override django styles */
-  margin: 0;
   left: 0;
   z-index: 1;
   min-width: 100%;
-  list-style: none;
-  background: #fff;
   box-sizing: border-box;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #fff;
 }
 
 .awesomplete > ul:empty {
@@ -33,18 +33,19 @@
 }
 
 .awesomplete > ul {
-  border-radius: 0.3em;
-  margin: 0.2em 0 0;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 0.05em 0.2em 0.6em rgba(0, 0, 0, 0.2);
+  border-radius: .3em;
+  margin: .2em 0 0;
+  background: hsla(0,0%,100%,.9);
+  background: linear-gradient(to bottom right, white, hsla(0,0%,100%,.8));
+  border: 1px solid rgba(0,0,0,.3);
+  box-shadow: .05em .2em .6em rgba(0,0,0,.2);
   text-shadow: none;
 }
 
 @supports (transform: scale(0)) {
   .awesomplete > ul {
-    transition: 0.3s cubic-bezier(0.4, 0.2, 0.5, 1.4);
-    transform-origin: 1.43em -0.43em;
+    transition: .3s cubic-bezier(.4,.2,.5,1.4);
+    transform-origin: 1.43em -.43em;
   }
 
   .awesomplete > ul[hidden],
@@ -60,11 +61,10 @@
 .awesomplete > ul:before {
   content: "";
   position: absolute;
-  top: -0.43em;
+  top: -.43em;
   left: 1em;
-  width: 0;
-  height: 0;
-  padding: 0.4em;
+  width: 0; height: 0;
+  padding: .4em;
   background: white;
   border: inherit;
   border-right: 0;
@@ -75,23 +75,30 @@
 
 .awesomplete > ul > li {
   position: relative;
-  padding: 0.375rem 0.5rem;
+  padding: .2em .5em;
   cursor: pointer;
-  list-style-type: none;
 }
 
 .awesomplete > ul > li:hover {
-  background: hsl(188, 78%, 75%);
+  background: hsl(200, 40%, 80%);
   color: black;
 }
 
 .awesomplete > ul > li[aria-selected="true"] {
-  background: hsl(188, 78%, 38%);
+  background: hsl(205, 40%, 40%);
   color: white;
 }
 
 .awesomplete mark {
-  padding: 0;
-  color: inherit;
-  background: inherit;
+  background: hsl(65, 100%, 50%);
 }
+
+.awesomplete li:hover mark {
+  background: hsl(68, 100%, 41%);
+}
+
+.awesomplete li[aria-selected="true"] mark {
+  background: hsl(86, 100%, 21%);
+  color: inherit;
+}
+/*# sourceMappingURL=awesomplete.css.map */

@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.6.0](https://github.com/dldevinc/django-awesomplete/tree/v0.6.0) - 2024-02-12
+
+### Features
+
+-   `awesomplete.js` updated to v1.1.5.
+
 ## [0.5.2](https://github.com/dldevinc/django-awesomplete/tree/v0.5.2) - 2023-02-24
 
 ### Features
