@@ -8,6 +8,10 @@
 -   Added support for Python 3.12.
 -   `awesomplete.js` updated to v1.1.5.
 
+### Bug Fixes
+
+-   Fixed https://github.com/dldevinc/django-awesomplete/issues/1.
+
 ## [0.5.2](https://github.com/dldevinc/django-awesomplete/tree/v0.5.2) - 2023-02-24
 
 ### Features
