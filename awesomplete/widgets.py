@@ -4,7 +4,20 @@ from typing import Sequence
 from django import forms
 from django.conf import settings
 from django.forms import widgets
-from django.forms.fields import CallableChoiceIterator
+
+try:
+    # django < 5.0
+    from django.forms.fields import CallableChoiceIterator
+except ImportError:
+    # django >= 5.0
+    from django.utils.choices import BaseChoiceIterator
+
+    class CallableChoiceIterator(BaseChoiceIterator):
+        def __init__(self, func):
+            self.func = func
+
+        def __iter__(self):
+            yield from self.func()
 
 
 def build_suggestions(suggestions):
