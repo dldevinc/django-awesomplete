@@ -1,5 +1,5 @@
-paper_admin/static/paper_admin/dist
-paper_admin/static/paper_admin/src/css/vendors
+awesomplete/static/awesomplete/css/vendor
+awesomplete/static/awesomplete/js/vendor
 *.yml
 *.yaml
 *.html
