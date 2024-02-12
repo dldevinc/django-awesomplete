@@ -107,7 +107,8 @@ class AwesompleteWidgetWrapper(widgets.Widget):
             ),
             css={
                 "screen": (
-                    "awesomplete/css/awesomplete.css",
+                    "awesomplete/css/vendor/awesomplete.css",
+                    "awesomplete/css/widget.css",
                 ),
             },
         )
